@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6CB317911C4D9E7900EE4C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */; };
+		6CB317931C4D9E7900EE4C0C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6CB317921C4D9E7900EE4C0C /* GameScene.sks */; };
+		6CB317951C4D9E7900EE4C0C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB317941C4D9E7900EE4C0C /* GameScene.swift */; };
+		6CB317971C4D9E7900EE4C0C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB317961C4D9E7900EE4C0C /* GameViewController.swift */; };
+		6CB3179A1C4D9E7900EE4C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB317981C4D9E7900EE4C0C /* Main.storyboard */; };
+		6CB3179C1C4D9E7900EE4C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3179B1C4D9E7900EE4C0C /* Assets.xcassets */; };
+		6CB3179F1C4D9E7900EE4C0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3179D1C4D9E7900EE4C0C /* LaunchScreen.storyboard */; };
+		6CB317A71C4DA00500EE4C0C /* fruitfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6CB3178D1C4D9E7900EE4C0C /* Fruity Crush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fruity Crush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6CB317921C4D9E7900EE4C0C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		6CB317941C4D9E7900EE4C0C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6CB317961C4D9E7900EE4C0C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		6CB317991C4D9E7900EE4C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CB3179B1C4D9E7900EE4C0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CB3179E1C4D9E7900EE4C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6CB317A01C4D9E7900EE4C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fruitfont.ttf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CB3178A1C4D9E7900EE4C0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CB317841C4D9E7900EE4C0C = {
+			isa = PBXGroup;
+			children = (
+				6CB3178F1C4D9E7900EE4C0C /* Fruity Crush */,
+				6CB3178E1C4D9E7900EE4C0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CB3178E1C4D9E7900EE4C0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CB3178D1C4D9E7900EE4C0C /* Fruity Crush.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CB3178F1C4D9E7900EE4C0C /* Fruity Crush */ = {
+			isa = PBXGroup;
+			children = (
+				6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */,
+				6CB317921C4D9E7900EE4C0C /* GameScene.sks */,
+				6CB317941C4D9E7900EE4C0C /* GameScene.swift */,
+				6CB317961C4D9E7900EE4C0C /* GameViewController.swift */,
+				6CB317981C4D9E7900EE4C0C /* Main.storyboard */,
+				6CB3179B1C4D9E7900EE4C0C /* Assets.xcassets */,
+				6CB3179D1C4D9E7900EE4C0C /* LaunchScreen.storyboard */,
+				6CB317A01C4D9E7900EE4C0C /* Info.plist */,
+				6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */,
+			);
+			path = "Fruity Crush";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CB3178C1C4D9E7900EE4C0C /* Fruity Crush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CB317A31C4D9E7900EE4C0C /* Build configuration list for PBXNativeTarget "Fruity Crush" */;
+			buildPhases = (
+				6CB317891C4D9E7900EE4C0C /* Sources */,
+				6CB3178A1C4D9E7900EE4C0C /* Frameworks */,
+				6CB3178B1C4D9E7900EE4C0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fruity Crush";
+			productName = "Fruity Crush";
+			productReference = 6CB3178D1C4D9E7900EE4C0C /* Fruity Crush.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CB317851C4D9E7900EE4C0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Dulio Denis";
+				TargetAttributes = {
+					6CB3178C1C4D9E7900EE4C0C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 6CB317881C4D9E7900EE4C0C /* Build configuration list for PBXProject "Fruity Crush" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CB317841C4D9E7900EE4C0C;
+			productRefGroup = 6CB3178E1C4D9E7900EE4C0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CB3178C1C4D9E7900EE4C0C /* Fruity Crush */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CB3178B1C4D9E7900EE4C0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CB317931C4D9E7900EE4C0C /* GameScene.sks in Resources */,
+				6CB3179F1C4D9E7900EE4C0C /* LaunchScreen.storyboard in Resources */,
+				6CB317A71C4DA00500EE4C0C /* fruitfont.ttf in Resources */,
+				6CB3179C1C4D9E7900EE4C0C /* Assets.xcassets in Resources */,
+				6CB3179A1C4D9E7900EE4C0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CB317891C4D9E7900EE4C0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CB317951C4D9E7900EE4C0C /* GameScene.swift in Sources */,
+				6CB317971C4D9E7900EE4C0C /* GameViewController.swift in Sources */,
+				6CB317911C4D9E7900EE4C0C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6CB317981C4D9E7900EE4C0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CB317991C4D9E7900EE4C0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6CB3179D1C4D9E7900EE4C0C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CB3179E1C4D9E7900EE4C0C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CB317A11C4D9E7900EE4C0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CB317A21C4D9E7900EE4C0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CB317A41C4D9E7900EE4C0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Fruity Crush/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ddapps.Fruity-Crush";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6CB317A51C4D9E7900EE4C0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Fruity Crush/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ddapps.Fruity-Crush";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CB317881C4D9E7900EE4C0C /* Build configuration list for PBXProject "Fruity Crush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CB317A11C4D9E7900EE4C0C /* Debug */,
+				6CB317A21C4D9E7900EE4C0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CB317A31C4D9E7900EE4C0C /* Build configuration list for PBXNativeTarget "Fruity Crush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CB317A41C4D9E7900EE4C0C /* Debug */,
+				6CB317A51C4D9E7900EE4C0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CB317851C4D9E7900EE4C0C /* Project object */;
+}
