@@ -9,14 +9,16 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Breve SC")
-        myLabel.text = "Fruity Crush Saga"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder) is not used in this app")
+    }
+
+    override init(size: CGSize) {
+        super.init(size: size)
         
-        self.addChild(myLabel)
+        // white background
+        backgroundColor = SKColor.whiteColor()
     }
 
 }
