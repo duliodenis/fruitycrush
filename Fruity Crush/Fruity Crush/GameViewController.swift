@@ -11,6 +11,7 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    var level: Level!
     var scene: GameScene!
 
     override func viewDidLoad() {
@@ -24,14 +25,38 @@ class GameViewController: UIViewController {
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .AspectFill
         
+        // Create the Level object
+        level = Level()
+        scene.level = level
+        
         // Present the scene.
         skView.presentScene(scene)
+        
+        // kick the game off
+        beginGame()
     }
-
+    
+    
+    // MARK: Game Lifecycle
+    
+    func beginGame() {
+        shuffle()
+    }
+    
+    
+    func shuffle() {
+        let newFruits = level.shuffle()
+        scene.addSpritesForFruits(newFruits)
+    }
+    
+    
+    // MARK: Boilerplate Functions
+    
     override func shouldAutorotate() -> Bool {
         return true
     }
 
+    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return .AllButUpsideDown
@@ -40,6 +65,7 @@ class GameViewController: UIViewController {
         }
     }
 
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

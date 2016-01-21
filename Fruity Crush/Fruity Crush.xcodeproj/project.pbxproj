@@ -66,6 +66,24 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		6C18FF161C5036A700961179 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6CB317941C4D9E7900EE4C0C /* GameScene.swift */,
+				6CB317981C4D9E7900EE4C0C /* Main.storyboard */,
+				6CB3179D1C4D9E7900EE4C0C /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6C18FF171C5044B800961179 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CB317961C4D9E7900EE4C0C /* GameViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		6CB317841C4D9E7900EE4C0C = {
 			isa = PBXGroup;
 			children = (
@@ -85,13 +103,11 @@
 		6CB3178F1C4D9E7900EE4C0C /* Fruity Crush */ = {
 			isa = PBXGroup;
 			children = (
-				6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */,
-				6CB317941C4D9E7900EE4C0C /* GameScene.swift */,
-				6CB317961C4D9E7900EE4C0C /* GameViewController.swift */,
+				6C18FF171C5044B800961179 /* ViewControllers */,
+				6C18FF161C5036A700961179 /* Views */,
 				6C18FF121C50002500961179 /* Model */,
 				6C18FF131C50003700961179 /* Resources */,
-				6CB317981C4D9E7900EE4C0C /* Main.storyboard */,
-				6CB3179D1C4D9E7900EE4C0C /* LaunchScreen.storyboard */,
+				6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */,
 				6CB317A01C4D9E7900EE4C0C /* Info.plist */,
 				6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */,
 			);
