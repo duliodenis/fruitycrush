@@ -18,6 +18,13 @@
 		6CB3179C1C4D9E7900EE4C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3179B1C4D9E7900EE4C0C /* Assets.xcassets */; };
 		6CB3179F1C4D9E7900EE4C0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3179D1C4D9E7900EE4C0C /* LaunchScreen.storyboard */; };
 		6CB317A71C4DA00500EE4C0C /* fruitfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */; };
+		6CE03EFE1C51791400B9B6E1 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03EFD1C51791400B9B6E1 /* Tile.swift */; };
+		6CE03F001C517A5400B9B6E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03EFF1C517A5400B9B6E1 /* Extensions.swift */; };
+		6CE03F141C5194C200B9B6E1 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03F131C5194C200B9B6E1 /* Level_1.json */; };
+		6CE03F161C5194DF00B9B6E1 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03F151C5194DF00B9B6E1 /* Level_0.json */; };
+		6CE03F1A1C5194E900B9B6E1 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03F171C5194E900B9B6E1 /* Level_2.json */; };
+		6CE03F1B1C5194EA00B9B6E1 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03F181C5194E900B9B6E1 /* Level_3.json */; };
+		6CE03F1C1C5194EA00B9B6E1 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03F191C5194E900B9B6E1 /* Level_4.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,13 @@
 		6CB3179E1C4D9E7900EE4C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CB317A01C4D9E7900EE4C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fruitfont.ttf; sourceTree = "<group>"; };
+		6CE03EFD1C51791400B9B6E1 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		6CE03EFF1C517A5400B9B6E1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6CE03F131C5194C200B9B6E1 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_1.json; path = Levels/Level_1.json; sourceTree = "<group>"; };
+		6CE03F151C5194DF00B9B6E1 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_0.json; path = Levels/Level_0.json; sourceTree = "<group>"; };
+		6CE03F171C5194E900B9B6E1 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_2.json; path = Levels/Level_2.json; sourceTree = "<group>"; };
+		6CE03F181C5194E900B9B6E1 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_3.json; path = Levels/Level_3.json; sourceTree = "<group>"; };
+		6CE03F191C5194E900B9B6E1 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_4.json; path = Levels/Level_4.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,8 @@
 				6C18FF141C50008F00961179 /* Level.swift */,
 				6C18FF0E1C4FEB2B00961179 /* Fruit.swift */,
 				6C18FF101C4FFB7C00961179 /* Array2D.swift */,
+				6CE03EFD1C51791400B9B6E1 /* Tile.swift */,
+				6CE03EFF1C517A5400B9B6E1 /* Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -60,6 +76,7 @@
 		6C18FF131C50003700961179 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6CE03F1D1C51950300B9B6E1 /* Levels */,
 				6CB3179B1C4D9E7900EE4C0C /* Assets.xcassets */,
 				6C18FF0C1C4FEA2F00961179 /* Sprites.atlas */,
 			);
@@ -112,6 +129,18 @@
 				6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */,
 			);
 			path = "Fruity Crush";
+			sourceTree = "<group>";
+		};
+		6CE03F1D1C51950300B9B6E1 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				6CE03F151C5194DF00B9B6E1 /* Level_0.json */,
+				6CE03F131C5194C200B9B6E1 /* Level_1.json */,
+				6CE03F171C5194E900B9B6E1 /* Level_2.json */,
+				6CE03F181C5194E900B9B6E1 /* Level_3.json */,
+				6CE03F191C5194E900B9B6E1 /* Level_4.json */,
+			);
+			name = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +202,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB3179F1C4D9E7900EE4C0C /* LaunchScreen.storyboard in Resources */,
+				6CE03F1C1C5194EA00B9B6E1 /* Level_4.json in Resources */,
+				6CE03F1B1C5194EA00B9B6E1 /* Level_3.json in Resources */,
 				6CB317A71C4DA00500EE4C0C /* fruitfont.ttf in Resources */,
 				6CB3179C1C4D9E7900EE4C0C /* Assets.xcassets in Resources */,
 				6CB3179A1C4D9E7900EE4C0C /* Main.storyboard in Resources */,
+				6CE03F141C5194C200B9B6E1 /* Level_1.json in Resources */,
+				6CE03F1A1C5194E900B9B6E1 /* Level_2.json in Resources */,
 				6C18FF0D1C4FEA2F00961179 /* Sprites.atlas in Resources */,
+				6CE03F161C5194DF00B9B6E1 /* Level_0.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +224,8 @@
 				6C18FF151C50008F00961179 /* Level.swift in Sources */,
 				6C18FF0F1C4FEB2B00961179 /* Fruit.swift in Sources */,
 				6CB317951C4D9E7900EE4C0C /* GameScene.swift in Sources */,
+				6CE03F001C517A5400B9B6E1 /* Extensions.swift in Sources */,
+				6CE03EFE1C51791400B9B6E1 /* Tile.swift in Sources */,
 				6CB317971C4D9E7900EE4C0C /* GameViewController.swift in Sources */,
 				6CB317911C4D9E7900EE4C0C /* AppDelegate.swift in Sources */,
 				6C18FF111C4FFB7C00961179 /* Array2D.swift in Sources */,

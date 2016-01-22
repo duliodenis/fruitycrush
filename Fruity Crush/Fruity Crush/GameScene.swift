@@ -18,8 +18,9 @@ class GameScene: SKScene {
     let TILEHEIGHT: CGFloat = 36.0
     
     // Sprite Kit Node Hierarchy
-    let gameLayer = SKNode()    // base layer - container for all other layers
+    let gameLayer  = SKNode()   // base layer - container for all other layers
     let fruitLayer = SKNode()   // fruit sprite layer
+    let tileLayer  = SKNode()   // tile sprite layer
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
@@ -42,10 +43,28 @@ class GameScene: SKScene {
         let layerPosition = CGPoint(x: -TILEWIDTH * CGFloat(NumColumns) / 2,
                                     y: -TILEHEIGHT * CGFloat(NumRows) / 2)
         
+        // the tiles are behind the fruit layer
+        tileLayer.position = layerPosition
+        gameLayer.addChild(tileLayer)
+        
         fruitLayer.position = layerPosition
         gameLayer.addChild(fruitLayer)
     }
 
+    
+    // add Tiles to the 
+    func addTiles() {
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if let tile = level.tileAt(column: column, row: row) {
+                    let tileNode = SKSpriteNode(imageNamed: "Tile")
+                    tileNode.position = pointForFruit(column: column, row: row)
+                    tileLayer.addChild(tileNode)
+                }
+            }
+        }
+    }
+    
     
     // Iterate through a set of fruits and add the SKSpiteNode to the fruit layer
     
