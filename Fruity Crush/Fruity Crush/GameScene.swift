@@ -22,6 +22,10 @@ class GameScene: SKScene {
     let fruitLayer = SKNode()   // fruit sprite layer
     let tileLayer  = SKNode()   // tile sprite layer
     
+    // Swipe Motion Support
+    var swipeFromColumn: Int?   // Record Column and Row number of fruit first
+    var swipeFromRow: Int?      // touched when swipe started
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
     }
@@ -49,6 +53,10 @@ class GameScene: SKScene {
         
         fruitLayer.position = layerPosition
         gameLayer.addChild(fruitLayer)
+        
+        // initialize the Swipe variables
+        swipeFromColumn = nil
+        swipeFromRow = nil
     }
 
     
@@ -56,7 +64,8 @@ class GameScene: SKScene {
     func addTiles() {
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                if let tile = level.tileAt(column: column, row: row) {
+                let tile = level.tileAt(column: column, row: row)
+                if tile != nil {
                     let tileNode = SKSpriteNode(imageNamed: "Tile")
                     tileNode.position = pointForFruit(column: column, row: row)
                     tileLayer.addChild(tileNode)
@@ -78,11 +87,101 @@ class GameScene: SKScene {
     }
     
     
+    // MARK: Helper Functions for CGPoint Conversions
+    
     // Helper method to convert column and row numbers into a CGPoint relative to
     // the fruit layer
     
     func pointForFruit(column column: Int, row: Int) -> CGPoint {
         return CGPoint(x: CGFloat(column) * TILEWIDTH + TILEWIDTH / 2,
                        y: CGFloat(row) * TILEHEIGHT + TILEHEIGHT / 2)
+    }
+    
+    
+    
+    // Helper method to convert a CGPoint into a column and row numbers if in grid
+    // Returns a tuple: (In grid (true), Column, Row) or (false (not in grid), 0, 0)
+    
+    func convertPoint(point: CGPoint) -> (success: Bool, column: Int, row: Int) {
+        if point.x >= 0 && point.x < CGFloat(NumColumns) * TILEWIDTH &&
+           point.y >= 0 && point.y < CGFloat(NumRows) * TILEHEIGHT {
+            return (true, Int(point.x / TILEWIDTH), Int(point.y / TILEHEIGHT))
+        } else {
+            return (false, 0, 0) // Invalid location not on game grid
+        }
+    }
+
+    
+    // MARK: Touch Functions to Support Swapping Fruits
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first as UITouch!
+        let location = touch.locationInNode(fruitLayer)
+        
+        let (success, column, row) = convertPoint(location)
+        if success {
+            let fruit = level.fruitAt(column: column, row: row)
+            if fruit != nil {
+                swipeFromColumn = column
+                swipeFromRow = row
+            }
+        }
+    }
+    
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if swipeFromColumn == nil { return }
+        
+        let touch = touches.first as UITouch!
+        let location = touch.locationInNode(fruitLayer)
+        
+        let (success, column, row) = convertPoint(location)
+        if success {
+            var horizontalDelta = 0, verticalDelta = 0
+            
+            if column < swipeFromColumn! {          // Swipe Left
+                horizontalDelta = -1
+            } else if column > swipeFromColumn! {   // Swipe Right
+                horizontalDelta = 1
+            } else if row < swipeFromRow! {         // Swipe Down
+                verticalDelta = -1
+            } else if row > swipeFromRow! {         // Swipe Up
+                verticalDelta = 1
+            }
+            
+            if horizontalDelta != 0 || verticalDelta != 0 {
+                trySwap(horizontal: horizontalDelta, vertical: verticalDelta)
+                
+                swipeFromColumn = nil // ignore the rest of this swipe
+            }
+        }
+    }
+    
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        swipeFromColumn = nil
+        swipeFromRow = nil
+    }
+    
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        touchesEnded(touches!, withEvent: event)
+    }
+    
+    
+    // MARK: Swap Function
+    
+    func trySwap(horizontal horizontalDelta: Int, vertical verticalDelta: Int) {
+        let toColumn = swipeFromColumn! + horizontalDelta
+        let toRow = swipeFromRow! + verticalDelta
+        
+        if toColumn < 0 || toColumn >= NumColumns { return }
+        if toRow < 0 || toRow >= NumRows { return }
+        
+        if let toFruit = level.fruitAt(column: toColumn, row: toRow) {
+            if let fromFruit = level.fruitAt(column: swipeFromColumn!, row: swipeFromRow!) {
+                print("Swapping: \(fromFruit) to \(toFruit)")
+            }
+        }
     }
 }
