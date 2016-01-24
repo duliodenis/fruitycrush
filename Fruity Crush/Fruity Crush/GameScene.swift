@@ -26,6 +26,10 @@ class GameScene: SKScene {
     var swipeFromColumn: Int?   // Record Column and Row number of fruit first
     var swipeFromRow: Int?      // touched when swipe started
     
+    // swipe handler closure to communicate with the GameVC - may be nil.
+    var swipeHandler: ((Swap) -> ())?
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
     }
@@ -169,7 +173,7 @@ class GameScene: SKScene {
     }
     
     
-    // MARK: Swap Function
+    // MARK: Swap Functions
     
     func trySwap(horizontal horizontalDelta: Int, vertical verticalDelta: Int) {
         let toColumn = swipeFromColumn! + horizontalDelta
@@ -180,8 +184,31 @@ class GameScene: SKScene {
         
         if let toFruit = level.fruitAt(column: toColumn, row: toRow) {
             if let fromFruit = level.fruitAt(column: swipeFromColumn!, row: swipeFromRow!) {
-                print("Swapping: \(fromFruit) to \(toFruit)")
+                if let handler = swipeHandler {
+                    let swap = Swap(fruitA: fromFruit, fruitB: toFruit)
+                    handler(swap)
+                }
             }
         }
+    }
+    
+    
+    func animateSwap(swap: Swap, completion: () -> ()) {
+        let spriteA = swap.fruitA.sprite!
+        let spriteB = swap.fruitB.sprite!
+        
+        // origin of swap fruit (A) goes on top
+        spriteA.zPosition = 100
+        spriteB.zPosition = 90
+        
+        let Duration: NSTimeInterval = 0.3
+        
+        let moveA = SKAction.moveTo(spriteB.position, duration: Duration)
+        moveA.timingMode = .EaseOut
+        spriteA.runAction(moveA, completion: completion)
+        
+        let moveB = SKAction.moveTo(spriteA.position, duration: Duration)
+        moveB.timingMode = .EaseOut
+        spriteB.runAction(moveB)
     }
 }

@@ -90,4 +90,24 @@ class Level {
         
         return set
     }
+    
+    
+    // MARK: Swap Support Function
+    
+    func performSwap(swap: Swap) {
+        let columnA = swap.fruitA.column
+        let rowA = swap.fruitA.row
+        
+        let columnB = swap.fruitB.column
+        let rowB = swap.fruitB.row
+        
+        // Swap B -> A, A -> B in the fruits[] array
+        fruits[columnA, rowA] = swap.fruitB
+        swap.fruitB.column = columnA
+        swap.fruitB.row = rowA
+        
+        fruits[columnB, rowB] = swap.fruitA
+        swap.fruitA.column = columnB
+        swap.fruitA.row = rowB        
+    }
 }

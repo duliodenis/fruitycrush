@@ -30,6 +30,9 @@ class GameViewController: UIViewController {
         scene.level = level
         scene.addTiles()
         
+        // Assign handleSwipe() top
+        scene.swipeHandler = handleSwipe
+        
         // Present the scene.
         skView.presentScene(scene)
         
@@ -48,6 +51,21 @@ class GameViewController: UIViewController {
     func shuffle() {
         let newFruits = level.shuffle()
         scene.addSpritesForFruits(newFruits)
+    }
+    
+    
+    // MARK: Swap Support Function
+    
+    func handleSwipe(swap: Swap) {
+        view.userInteractionEnabled = false
+        
+        // update the Level (data model)
+        level.performSwap(swap)
+        
+        // then animate the Game Scene (View)
+        scene.animateSwap(swap) { // trailing closure syntax
+            self.view.userInteractionEnabled = true
+        }
     }
     
     
