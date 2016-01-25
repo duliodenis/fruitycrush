@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
         scene.level = level
         scene.addTiles()
         
-        // Assign handleSwipe() top
+        // Assign the handleSwipe() function to GameScene's swipeHandler property
         scene.swipeHandler = handleSwipe
         
         // Present the scene.

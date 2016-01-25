@@ -22,6 +22,9 @@ class GameScene: SKScene {
     let fruitLayer = SKNode()   // fruit sprite layer
     let tileLayer  = SKNode()   // tile sprite layer
     
+    // for highlighting selected sprites
+    var selectionSprite = SKSpriteNode()
+    
     // Swipe Motion Support
     var swipeFromColumn: Int?   // Record Column and Row number of fruit first
     var swipeFromRow: Int?      // touched when swipe started
@@ -126,6 +129,7 @@ class GameScene: SKScene {
         if success {
             let fruit = level.fruitAt(column: column, row: row)
             if fruit != nil {
+                showSelectionIndicatorForFruit(fruit!)
                 swipeFromColumn = column
                 swipeFromRow = row
             }
@@ -155,6 +159,7 @@ class GameScene: SKScene {
             
             if horizontalDelta != 0 || verticalDelta != 0 {
                 trySwap(horizontal: horizontalDelta, vertical: verticalDelta)
+                hideSelectionIndicator()
                 
                 swipeFromColumn = nil // ignore the rest of this swipe
             }
@@ -163,6 +168,9 @@ class GameScene: SKScene {
     
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if selectionSprite.parent != nil && swipeFromColumn != nil {
+            hideSelectionIndicator()
+        }
         swipeFromColumn = nil
         swipeFromRow = nil
     }
@@ -210,5 +218,36 @@ class GameScene: SKScene {
         let moveB = SKAction.moveTo(spriteA.position, duration: Duration)
         moveB.timingMode = .EaseOut
         spriteB.runAction(moveB)
+    }
+    
+    
+    // MARK: Highlighting Function
+    
+    func showSelectionIndicatorForFruit(fruit: Fruit) {
+        if selectionSprite.parent != nil {
+            selectionSprite.removeFromParent()
+        }
+        
+        if let sprite = fruit.sprite {
+            let texture = SKTexture(imageNamed: fruit.fruitType.highlightedSpriteName)
+            
+            selectionSprite.size = texture.size()
+            // Need to run an action to give the correct size after setting
+            selectionSprite.runAction(SKAction.setTexture(texture))
+            
+            // make it a child of the fruit sprite to have it move in the swap animation
+            sprite.addChild(selectionSprite)
+            // Make highlighted sprite visible
+            selectionSprite.alpha = 1.0
+        }
+    }
+    
+    
+    func hideSelectionIndicator() {
+    // remove the selection sprite by fading it out
+        selectionSprite.runAction(SKAction.sequence([
+            SKAction.fadeOutWithDuration(0.3),
+            SKAction.removeFromParent()
+            ]))
     }
 }
