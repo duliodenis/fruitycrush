@@ -79,7 +79,15 @@ class Level {
                 
                 // check the tiles arrary to see if a fruit can be placed
                 if tiles[column, row] != nil {
-                    let fruitType = FruitType.random()
+
+                    // find a fruit type where no chains of three exist
+                    var fruitType: FruitType
+                    repeat { fruitType = FruitType.random() }
+                    while (column >= 2 && fruits[column - 1, row]?.fruitType == fruitType &&
+                                          fruits[column - 2, row]?.fruitType == fruitType)
+                    ||    (row >= 2 && fruits[column, row - 1]?.fruitType == fruitType &&
+                                       fruits[column, row - 2]?.fruitType == fruitType)
+                    
                     let fruit = Fruit(column: column, row: row, fruitType: fruitType)
                     
                     fruits[column, row] = fruit
