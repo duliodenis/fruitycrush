@@ -19,6 +19,8 @@ class Level {
     // and a private array of slots defining whether a fruit can slip in
     private var tiles  = Array2D<Tile>(columns: NumColumns, rows: NumRows)
     
+    // a list of all possible moves a player can make
+    private var possibleSwaps = Set<Swap>()
     
     // initialize the level with a filename
     init(filename: String) {
@@ -65,7 +67,16 @@ class Level {
     
     
     func shuffle() -> Set<Fruit> {
-        return createInitialFruits()
+        var set: Set<Fruit>
+        
+        repeat {
+            set = createInitialFruits()
+            detectPossibleSwaps()
+            print("Possible swaps: \(possibleSwaps)")
+        
+        } while possibleSwaps.count == 0
+        
+        return set
     }
     
     
@@ -117,5 +128,100 @@ class Level {
         fruits[columnB, rowB] = swap.fruitA
         swap.fruitA.column = columnB
         swap.fruitA.row = rowB        
+    }
+    
+    
+    func detectPossibleSwaps() {
+        var set = Set<Swap>()
+        
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if let currentFruit = fruits[column, row] {
+                    // Work our way up and to the right
+                    
+                    // Start with swapping with the one on the right
+                    if column < NumColumns - 1 {
+                        // No tile indicates no fruit here.
+                        if let fruitOnTheRight = fruits[column + 1, row] {
+                            // Swap them
+                            fruits[column, row] = fruitOnTheRight
+                            fruits[column + 1, row] = currentFruit
+                            
+                            // Check to see if either fruit has a chain
+                            if hasChain(column: column + 1, row: row) ||
+                               hasChain(column: column, row: row) {
+                                set.insert(Swap(fruitA: currentFruit, fruitB: fruitOnTheRight))
+                            }
+                            
+                            // Swap them back
+                            fruits[column, row] = currentFruit
+                            fruits[column + 1, row] = fruitOnTheRight
+                        }
+                    }
+                    
+                    // Next, swap with the one above
+                    if row < NumRows - 1 {
+                        if let fruitOnTop = fruits[column, row + 1] {
+                            // Swap them
+                            fruits[column, row] = fruitOnTop
+                            fruits[column, row + 1] = currentFruit
+                            
+                            // Check to see if either fruit has a chain
+                            if hasChain(column: column, row: row + 1) ||
+                               hasChain(column: column, row: row) {
+                                    set.insert(Swap(fruitA: currentFruit, fruitB: fruitOnTop))
+                            }
+                            
+                            // Swap them back
+                            fruits[column, row] = currentFruit
+                            fruits[column + 1, row] = fruitOnTop
+                        }
+                    }
+                }
+            }
+        }
+        
+        possibleSwaps = set
+    }
+    
+    
+    // MARK: Helper Method for Possible Swap Detection
+    
+    private func hasChain(column column: Int, row: Int) -> Bool {
+        // determine whether we have three or more consecutive fruits
+        let fruitType = fruits[column, row]?.fruitType
+        
+        // check horizontally left (-1) and right (+1)
+        var horizontalLength = 1
+        for index in column.stride(to: 0, by: -1) {
+            if fruits[index, row]?.fruitType == fruitType {
+                horizontalLength += 1
+            }
+        }
+        for index in column.stride(to: NumColumns, by: 1) {
+            if fruits[index, row]?.fruitType == fruitType {
+                horizontalLength += 1
+            }
+        }
+        // if we have more than three return chain == true
+        if horizontalLength >= 3 { return true }
+        
+        // do the same vertically down (-1) and up (+1)
+        var verticalLength = 1
+        for index in row.stride(to: 0, by: -1) {
+            if fruits[column, index]?.fruitType == fruitType {
+                verticalLength += 1
+            }
+        }
+        for index in row.stride(to: NumRows, by: 1) {
+            if fruits[column, index]?.fruitType == fruitType {
+                verticalLength += 1
+            }
+        }
+        // if there are more than three return true indicating a chain
+        if verticalLength >= 3 { return true }
+        
+        // if we made it this far we detected no chain - return false
+        return false
     }
 }
