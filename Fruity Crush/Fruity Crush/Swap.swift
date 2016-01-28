@@ -29,6 +29,6 @@ struct Swap: CustomStringConvertible, Hashable {
 // Since Swap is Hashable conform to the Equatable Protocol
 
 func ==(lhs: Swap, rhs: Swap) -> Bool {
-    return (lhs.fruitA == rhs.fruitA && lhs.fruitB == lhs.fruitB) ||
-           (lhs.fruitB == rhs.fruitA && lhs.fruitA == lhs.fruitB)
+    return (lhs.fruitA == rhs.fruitA && lhs.fruitB == rhs.fruitB) ||
+           (lhs.fruitB == rhs.fruitA && lhs.fruitA == rhs.fruitB)
 }
