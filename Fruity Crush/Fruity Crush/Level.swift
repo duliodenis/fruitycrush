@@ -99,6 +99,7 @@ class Level {
                     ||    (row >= 2 && fruits[column, row - 1]?.fruitType == fruitType &&
                                        fruits[column, row - 2]?.fruitType == fruitType)
                     
+                    // Create a new fruit and add it to the 2D Array.
                     let fruit = Fruit(column: column, row: row, fruitType: fruitType)
                     
                     fruits[column, row] = fruit
@@ -140,6 +141,7 @@ class Level {
                     // Work our way up and to the right
                     
                     // Start with swapping with the one on the right
+                    // Don't need to check the last column.
                     if column < NumColumns - 1 {
                         // No tile indicates no fruit here.
                         if let fruitOnTheRight = fruits[column + 1, row] {
@@ -147,7 +149,7 @@ class Level {
                             fruits[column, row] = fruitOnTheRight
                             fruits[column + 1, row] = currentFruit
                             
-                            // Check to see if either fruit has a chain
+                            // Check to see if either fruit is part of a chain
                             if hasChain(column: column + 1, row: row) ||
                                hasChain(column: column, row: row) {
                                 set.insert(Swap(fruitA: currentFruit, fruitB: fruitOnTheRight))
@@ -159,14 +161,15 @@ class Level {
                         }
                     }
                     
-                    // Next, swap with the one above
+                    // Next, check to see if its possible to swap with the one above
+                    // Don't need to check the last row.
                     if row < NumRows - 1 {
                         if let fruitOnTop = fruits[column, row + 1] {
                             // Swap them
                             fruits[column, row] = fruitOnTop
                             fruits[column, row + 1] = currentFruit
                             
-                            // Check to see if either fruit has a chain
+                            // Check to see if either fruit is part of a chain
                             if hasChain(column: column, row: row + 1) ||
                                hasChain(column: column, row: row) {
                                     set.insert(Swap(fruitA: currentFruit, fruitB: fruitOnTop))
@@ -174,7 +177,7 @@ class Level {
                             
                             // Swap them back
                             fruits[column, row] = currentFruit
-                            fruits[column + 1, row] = fruitOnTop
+                            fruits[column, row + 1] = fruitOnTop
                         }
                     }
                 }

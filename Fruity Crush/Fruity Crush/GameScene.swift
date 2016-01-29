@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    // the current level
+    // the current level - which will never be nil (!)
     var level: Level!
     
     // Tile width and height in pixels
@@ -58,10 +58,12 @@ class GameScene: SKScene {
         tileLayer.position = layerPosition
         gameLayer.addChild(tileLayer)
         
+        // the fruit layer holds all the fruit sprites. the position of these
+        // sprites are relative to the fruitLayer's bottom-left corner (the origin).
         fruitLayer.position = layerPosition
         gameLayer.addChild(fruitLayer)
         
-        // initialize the Swipe variables
+        // initialize the Swipe variables - nil denotes invalid values.
         swipeFromColumn = nil
         swipeFromRow = nil
     }
@@ -119,7 +121,7 @@ class GameScene: SKScene {
     }
 
     
-    // MARK: Touch Functions to Support Swapping Fruits
+    // MARK: Touch Functions to Support Swipe Detection and Swapping Fruits
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first as UITouch!
@@ -127,9 +129,11 @@ class GameScene: SKScene {
         
         let (success, column, row) = convertPoint(location)
         if success {
-            let fruit = level.fruitAt(column: column, row: row)
-            if fruit != nil {
-                showSelectionIndicatorForFruit(fruit!)
+            // ensure the touch is on a fruit and not on an empty tile.
+            if let fruit = level.fruitAt(column: column, row: row) {
+                showSelectionIndicatorForFruit(fruit)
+                // Store which column and row in order to compare them later to get direction
+                // and know which fruit to swipe first
                 swipeFromColumn = column
                 swipeFromRow = row
             }
@@ -147,6 +151,7 @@ class GameScene: SKScene {
         if success {
             var horizontalDelta = 0, verticalDelta = 0
             
+            // figure out the direction the swipe is in
             if column < swipeFromColumn! {          // Swipe Left
                 horizontalDelta = -1
             } else if column > swipeFromColumn! {   // Swipe Right
@@ -157,6 +162,7 @@ class GameScene: SKScene {
                 verticalDelta = 1
             }
             
+            // only try swapping when the player swiped into a new square
             if horizontalDelta != 0 || verticalDelta != 0 {
                 trySwap(horizontal: horizontalDelta, vertical: verticalDelta)
                 hideSelectionIndicator()
@@ -168,9 +174,12 @@ class GameScene: SKScene {
     
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // Remove the selection indicator with a Fade out only when the player didn't swipe.
         if selectionSprite.parent != nil && swipeFromColumn != nil {
             hideSelectionIndicator()
         }
+        
+        // Reset the starting column and row when gesture ends regardless if valid swipe or not.
         swipeFromColumn = nil
         swipeFromRow = nil
     }
@@ -187,16 +196,15 @@ class GameScene: SKScene {
         let toColumn = swipeFromColumn! + horizontalDelta
         let toRow = swipeFromRow! + verticalDelta
         
+        // Bounds protection - Ignore when player goes over the edges.
         if toColumn < 0 || toColumn >= NumColumns { return }
         if toRow < 0 || toRow >= NumRows { return }
         
-        if let toFruit = level.fruitAt(column: toColumn, row: toRow) {
-            if let fromFruit = level.fruitAt(column: swipeFromColumn!, row: swipeFromRow!) {
-                if let handler = swipeHandler {
-                    let swap = Swap(fruitA: fromFruit, fruitB: toFruit)
-                    handler(swap)
-                }
-            }
+        if let toFruit = level.fruitAt(column: toColumn, row: toRow),
+           let fromFruit = level.fruitAt(column: swipeFromColumn!, row: swipeFromRow!),
+           let handler = swipeHandler {
+            let swap = Swap(fruitA: fromFruit, fruitB: toFruit)
+            handler(swap)
         }
     }
     
@@ -224,6 +232,7 @@ class GameScene: SKScene {
     // MARK: Highlighting Function
     
     func showSelectionIndicatorForFruit(fruit: Fruit) {
+        // If the selection indicator is somehow still visible - remove it.
         if selectionSprite.parent != nil {
             selectionSprite.removeFromParent()
         }
