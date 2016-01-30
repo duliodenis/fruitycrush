@@ -114,6 +114,12 @@ class Level {
     
     // MARK: Swap Support Function
     
+    func isSwapPossible(swap: Swap) -> Bool {
+        // returns true if the swap is in the set of possible swaps.
+        return possibleSwaps.contains(swap)
+    }
+    
+    
     func performSwap(swap: Swap) {
         let columnA = swap.fruitA.column
         let rowA = swap.fruitA.row
