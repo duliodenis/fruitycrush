@@ -69,7 +69,9 @@ class GameViewController: UIViewController {
                 self.view.userInteractionEnabled = true
             }
         } else { // the swap was not possible
-            view.userInteractionEnabled = true
+            scene.animateInvalidSwap(swap) {
+                self.view.userInteractionEnabled = true
+            }
         }
     }
     
