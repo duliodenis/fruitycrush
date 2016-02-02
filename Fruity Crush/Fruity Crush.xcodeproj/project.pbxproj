@@ -11,6 +11,7 @@
 		6C18FF0F1C4FEB2B00961179 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18FF0E1C4FEB2B00961179 /* Fruit.swift */; };
 		6C18FF111C4FFB7C00961179 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18FF101C4FFB7C00961179 /* Array2D.swift */; };
 		6C18FF151C50008F00961179 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18FF141C50008F00961179 /* Level.swift */; };
+		6C53E4C51C601A1E00F7828F /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C53E4C41C601A1E00F7828F /* Chain.swift */; };
 		6C9664D11C5EA9B100C60C70 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9664D01C5EA9B100C60C70 /* Audio.swift */; };
 		6C9664DB1C5EAAED00C60C70 /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6C9664D51C5EAAED00C60C70 /* Chomp.wav */; };
 		6C9664DC1C5EAAED00C60C70 /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6C9664D61C5EAAED00C60C70 /* Drip.wav */; };
@@ -40,6 +41,7 @@
 		6C18FF0E1C4FEB2B00961179 /* Fruit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		6C18FF101C4FFB7C00961179 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		6C18FF141C50008F00961179 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		6C53E4C41C601A1E00F7828F /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		6C9664D01C5EA9B100C60C70 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		6C9664D51C5EAAED00C60C70 /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Chomp.wav; path = Audio/Chomp.wav; sourceTree = "<group>"; };
 		6C9664D61C5EAAED00C60C70 /* Drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Drip.wav; path = Audio/Drip.wav; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				6C18FF141C50008F00961179 /* Level.swift */,
 				6C18FF0E1C4FEB2B00961179 /* Fruit.swift */,
+				6C53E4C41C601A1E00F7828F /* Chain.swift */,
 				6C18FF101C4FFB7C00961179 /* Array2D.swift */,
 				6CD1BB631C553B3900266C55 /* Swap.swift */,
 				6CE03EFD1C51791400B9B6E1 /* Tile.swift */,
@@ -262,6 +265,7 @@
 				6C18FF151C50008F00961179 /* Level.swift in Sources */,
 				6C18FF0F1C4FEB2B00961179 /* Fruit.swift in Sources */,
 				6CB317951C4D9E7900EE4C0C /* GameScene.swift in Sources */,
+				6C53E4C51C601A1E00F7828F /* Chain.swift in Sources */,
 				6CE03F001C517A5400B9B6E1 /* Extensions.swift in Sources */,
 				6C9664D11C5EA9B100C60C70 /* Audio.swift in Sources */,
 				6CE03EFE1C51791400B9B6E1 /* Tile.swift in Sources */,
