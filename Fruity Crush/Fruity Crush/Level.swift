@@ -239,9 +239,11 @@ class Level {
     
     func removeMatches() -> Set<Chain> {
         let horizontalChains = detectHorizontalMatches()
+        let verticalChains = detectVerticalMatches()
         
         print("Horizontal Matches: \(horizontalChains)")
-        return horizontalChains
+        print("Vertical Matches: \(verticalChains)")
+        return horizontalChains.union(verticalChains)
     }
     
     
@@ -252,7 +254,7 @@ class Level {
         // loop therough the rows and columns (ignoring edges)
         for row in 0..<NumRows {
             for var column in 0..<NumColumns-2 {
-                // if the next 2 fruits are the same type we have a chain
+                // if the next 2 fruits are the same type we have a horizontal chain
                 if let fruit = fruits[column, row] {
                     let matchType = fruit.fruitType
                     if fruits[column + 1, row]?.fruitType == matchType && fruits[column + 2, row]?.fruitType == matchType {
@@ -260,6 +262,32 @@ class Level {
                         repeat {
                             chain.addFruit(fruits[column, row]!)
                             column += 1
+                        } while column < NumColumns && fruits[column, row]?.fruitType == matchType
+                        
+                        set.insert(chain)
+                    }
+                }
+            }
+        }
+        return set
+    }
+    
+    
+    func detectVerticalMatches() -> Set<Chain> {
+        // new set to contain any vertical chains found
+        var set = Set<Chain>()
+        
+        // loop therough the columns and rows (ignoring edges)
+        for column in 0..<NumColumns {
+            for var row in 0..<NumRows-2 {
+                // if the next 2 fruits are the same type we have a vertical chain
+                if let fruit = fruits[column, row] {
+                    let matchType = fruit.fruitType
+                    if fruits[column, row + 1]?.fruitType == matchType && fruits[column, row + 2]?.fruitType == matchType {
+                        let chain = Chain(chainType: .Vertical)
+                        repeat {
+                            chain.addFruit(fruits[column, row]!)
+                            row += 1
                         } while column < NumColumns && fruits[column, row]?.fruitType == matchType
                         
                         set.insert(chain)
