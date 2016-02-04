@@ -56,6 +56,11 @@ class GameViewController: UIViewController {
     
     // MARK: Swap Support Function
     
+    
+    func handleMatches() {
+        level.removeMatches()
+    }
+    
     func handleSwipe(swap: Swap) {
         view.userInteractionEnabled = false
         
@@ -66,6 +71,7 @@ class GameViewController: UIViewController {
             
             // then animate the Game Scene (View)
             scene.animateSwap(swap) { // trailing closure syntax
+                self.handleMatches()
                 self.view.userInteractionEnabled = true
             }
         } else { // the swap was not possible

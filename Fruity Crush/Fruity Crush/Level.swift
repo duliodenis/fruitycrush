@@ -233,4 +233,40 @@ class Level {
         // if we made it this far we detected no chain - return false
         return false
     }
+    
+    
+    // MARK: Match Support Functions
+    
+    func removeMatches() -> Set<Chain> {
+        let horizontalChains = detectHorizontalMatches()
+        
+        print("Horizontal Matches: \(horizontalChains)")
+        return horizontalChains
+    }
+    
+    
+    func detectHorizontalMatches() -> Set<Chain> {
+        // new set to contain any horizontal chains found
+        var set = Set<Chain>()
+        
+        // loop therough the rows and columns (ignoring edges)
+        for row in 0..<NumRows {
+            for var column in 0..<NumColumns-2 {
+                // if the next 2 fruits are the same type we have a chain
+                if let fruit = fruits[column, row] {
+                    let matchType = fruit.fruitType
+                    if fruits[column + 1, row]?.fruitType == matchType && fruits[column + 2, row]?.fruitType == matchType {
+                        let chain = Chain(chainType: .Horizontal)
+                        repeat {
+                            chain.addFruit(fruits[column, row]!)
+                            column += 1
+                        } while column < NumColumns && fruits[column, row]?.fruitType == matchType
+                        
+                        set.insert(chain)
+                    }
+                }
+            }
+        }
+        return set
+    }
 }
