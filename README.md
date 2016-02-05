@@ -1,7 +1,7 @@
 # Fruity Crush Saga
 An iOS 9 / Swift 2 match-three puzzle game using SpriteKit.
 
-![](https://github.com/duliodenis/fruitycrush/blob/master/art/screenshot/fruitycrush4.gif)
+![](https://github.com/duliodenis/fruitycrush/blob/master/art/screenshot/fruitycrush5.gif)
 
 Fruity Crush Saga uses delicious and healthy fruits with a modern flat design.
 

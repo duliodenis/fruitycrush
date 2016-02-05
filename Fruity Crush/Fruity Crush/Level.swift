@@ -241,8 +241,10 @@ class Level {
         let horizontalChains = detectHorizontalMatches()
         let verticalChains = detectVerticalMatches()
         
-        print("Horizontal Matches: \(horizontalChains)")
-        print("Vertical Matches: \(verticalChains)")
+        // update the model by removing any chains
+        removeFruits(horizontalChains)
+        removeFruits(verticalChains)
+        
         return horizontalChains.union(verticalChains)
     }
     
@@ -296,5 +298,19 @@ class Level {
             }
         }
         return set
+    }
+    
+    
+    // MARK: Fruit Removal
+    
+    func removeFruits(chains: Set<Chain>) {
+        // for all the chains passed
+        for chain in chains {
+            // take each fruit and
+            for fruit in chain.fruits {
+                // set the element to nil
+                fruits[fruit.column, fruit.row] = nil
+            }
+        }
     }
 }

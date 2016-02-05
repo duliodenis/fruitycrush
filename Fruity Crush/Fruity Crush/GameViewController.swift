@@ -56,10 +56,14 @@ class GameViewController: UIViewController {
     
     // MARK: Swap Support Function
     
-    
     func handleMatches() {
-        level.removeMatches()
+        let chains = level.removeMatches()
+        
+        scene.animateMatchedFruits(chains) {
+            self.view.userInteractionEnabled = true
+        }
     }
+    
     
     func handleSwipe(swap: Swap) {
         view.userInteractionEnabled = false

@@ -253,6 +253,30 @@ class GameScene: SKScene {
     }
     
     
+    func animateMatchedFruits(chains: Set<Chain>, completion: () -> ()) {
+        // loop through all the chains
+        for chain in chains {
+            // for every fruit in each chain
+            for fruit in chain.fruits {
+                // trigger an animation
+                if let sprite = fruit.sprite {
+                    // ensuring we do not animate twice with the "removing" key
+                    if sprite.actionForKey("removing") == nil {
+                        // shrink the sprite animation
+                        let scaleAction = SKAction.scaleTo(0.1, duration: 0.3)
+                        scaleAction.timingMode = .EaseOut
+                        // and remove from the fruit layer
+                        sprite.runAction(SKAction.sequence([scaleAction, SKAction.removeFromParent()]), withKey: "removing")
+                    }
+                }
+            }
+        }
+        runAction(Audio.match)
+        // continue after the animation finishes
+        runAction(SKAction.waitForDuration(0.3), completion: completion)
+    }
+    
+    
     // MARK: Highlighting Function
     
     func showSelectionIndicatorForFruit(fruit: Fruit) {
