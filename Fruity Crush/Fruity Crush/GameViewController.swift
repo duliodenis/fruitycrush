@@ -57,10 +57,16 @@ class GameViewController: UIViewController {
     // MARK: Swap Support Function
     
     func handleMatches() {
+        // remove any matching fruits and fill up the gaps with new fruits.
+        // interaction is locked during this action.
         let chains = level.removeMatches()
         
+        // Animate any of the removed matches
         scene.animateMatchedFruits(chains) {
+            let columns = self.level.addFruits()
+            self.scene.animateFallingFruits(columns) {
             self.view.userInteractionEnabled = true
+            }
         }
     }
     

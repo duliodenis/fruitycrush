@@ -277,6 +277,39 @@ class GameScene: SKScene {
     }
     
     
+    func animateFallingFruits(columns: [[Fruit]], completion: () -> ()) {
+        // dynamically calculate the longest animation duration for the fall
+        var longestDuration: NSTimeInterval = 0
+        
+        // loop through the matches array of arrays
+        for array in columns {
+            for (index, fruit) in array.enumerate() {
+                let newPosition = pointForFruit(column: fruit.column, row: fruit.row)
+                
+                // The further away from the gap the larger the animation delay.
+                let delay = 0.05 + 0.15 * NSTimeInterval(index)
+                // a sprite is guaranteed in the model
+                let sprite = fruit.sprite
+                
+                // duration is calculated based on how far the fruit has to fall (.1 sec per tile)
+                let duration = NSTimeInterval(((sprite!.position.y - newPosition.y) / TILEHEIGHT) * 0.1)
+                longestDuration = max(longestDuration, duration + delay)
+                
+                let moveAction = SKAction.moveTo(newPosition, duration: duration)
+                moveAction.timingMode = .EaseOut
+                
+                sprite?.runAction(SKAction.sequence([
+                    SKAction.waitForDuration(delay),
+                    SKAction.group([moveAction, Audio.fallingFruits])
+                    ]))
+            }
+        }
+        
+        // Wait until all the fruits have fallen before we continue
+        runAction(SKAction.waitForDuration(longestDuration), completion: completion)
+    }
+    
+    
     // MARK: Highlighting Function
     
     func showSelectionIndicatorForFruit(fruit: Fruit) {

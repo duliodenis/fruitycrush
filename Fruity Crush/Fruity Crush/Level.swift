@@ -301,7 +301,7 @@ class Level {
     }
     
     
-    // MARK: Fruit Removal
+    // MARK: Fruit Addition & Removal
     
     func removeFruits(chains: Set<Chain>) {
         // for all the chains passed
@@ -312,5 +312,44 @@ class Level {
                 fruits[fruit.column, fruit.row] = nil
             }
         }
+    }
+    
+    
+    // detects gaps in the game grid and shifts fruits down to pack.
+    // this creates gaps at the top of the game grid.
+    // Returns an array of arrays of shifted fruits due to gaps.
+    // Fruits are in their new positions with gaps at the top.
+    func addFruits() -> [[Fruit]]{
+        var columns = [[Fruit]]()
+        
+        // loop through the rows from bottom to top one column at a time.
+        for column in 0..<NumColumns {
+            var array = [Fruit]()
+            for row in 0..<NumRows {
+                // if we have a tile but no fruit thats a gap that needs filling
+                if tiles[column, row] != nil && fruits[column, row] == nil {
+                    // scan up to find a fruit
+                    for lookup in (row + 1)..<NumRows {
+                        if let fruit = fruits[column, lookup] {
+                            // swap the fruit with the gap
+                            fruits[column, lookup] = nil
+                            fruits[column, row] = fruit
+                            fruit.row = row
+                            
+                            // each column has an array of the fallen fruits
+                            // with the preservation of order - those first in
+                            // the array are lower on the screen.
+                            // The order is important for the animation delay.
+                            array.append(fruit)
+                            break // no need to scan any further up
+                        }
+                    }
+                }
+            }
+            if !array.isEmpty {
+                columns.append(array)
+            }
+        }
+        return columns
     }
 }
