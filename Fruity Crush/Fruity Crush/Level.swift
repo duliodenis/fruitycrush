@@ -301,7 +301,7 @@ class Level {
     }
     
     
-    // MARK: Fruit Addition & Removal
+    // MARK: Fruit Addition, Removal & Top Up
     
     func removeFruits(chains: Set<Chain>) {
         // for all the chains passed
@@ -344,6 +344,51 @@ class Level {
                             break // no need to scan any further up
                         }
                     }
+                }
+            }
+            if !array.isEmpty {
+                columns.append(array)
+            }
+        }
+        return columns
+    }
+    
+    
+    // Add new fruits to fill up the gaps left by addFruits at the top of the columns.
+    // Returns an array of ordered column fruit arrays.
+    // Fruits are ordered from top down.
+    func topUpFruits() -> [[Fruit]] {
+        var columns = [[Fruit]]()
+        var fruitType: FruitType = .Unknown
+        
+        // detect where we have to add new fruits
+        // n gaps translates to n fruits
+        for column in 0..<NumColumns {
+            var array = [Fruit]()
+            let index: Int = NumRows-1
+            
+            // scan from top to bottom ending when we find the first fruit
+            for row in index.stride(to: 0, by: -1) {
+                if fruits[column, row] != nil { break }
+                
+                // if a gap is found
+                if tiles[column, row] != nil {
+                    var newFruitType: FruitType
+                    
+                    // randomly create a new type of fruit that is not equal to the last
+                    repeat {
+                        newFruitType = FruitType.random()
+                    } while newFruitType == fruitType
+                    
+                    fruitType = newFruitType
+                    
+                    // create the new fruit
+                    let fruit = Fruit(column: column, row: row, fruitType: fruitType)
+                    
+                    // and add it to the game grid for this column
+                    fruits[column, row] = fruit
+                    // and to the return array
+                    array.append(fruit)
                 }
             }
             if !array.isEmpty {

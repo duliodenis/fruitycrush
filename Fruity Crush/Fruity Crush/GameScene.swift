@@ -310,6 +310,50 @@ class GameScene: SKScene {
     }
     
     
+    
+    func animateNewFruits(columns: [[Fruit]], completion: () -> ()) {
+        // calculate how long the animations are going to take so we can wait that amount of time
+        var longestDuration: NSTimeInterval = 0
+        
+        for array in columns {
+            let startRow = array[0].row + 1
+            
+            for (index, fruit) in array.enumerate() {
+                // create a new sprite for the fruit
+                let sprite = SKSpriteNode(imageNamed: fruit.fruitType.spriteName)
+                // and position it in the scene
+                sprite.position = pointForFruit(column: fruit.column, row: fruit.row)
+                // and add it to the fruit layer
+                fruitLayer.addChild(sprite)
+                fruit.sprite = sprite
+                
+                // give fruit that is higher up a longer delay so they fall after one another
+                let delay = 0.1 + 0.2 * NSTimeInterval(array.count - index - 1)
+                
+                // Calculate duration based on the fruit's fall distance
+                let duration = NSTimeInterval(startRow - fruit.row) * 0.1
+                longestDuration = max(longestDuration, duration + delay)
+                
+                // animate the sprite falling and fade in to make the transition less abrupt
+                let newPosition = pointForFruit(column: fruit.column, row: fruit.row)
+                let moveAction = SKAction.moveTo(newPosition, duration: duration)
+                moveAction.timingMode = .EaseOut
+                sprite.alpha = 0
+                sprite.runAction(
+                    SKAction.sequence([
+                        SKAction.waitForDuration(delay),
+                        SKAction.group([
+                            SKAction.fadeInWithDuration(0.05),
+                            moveAction,
+                            Audio.addFruit])
+                        ])
+                )
+            }
+        }
+        runAction(SKAction.waitForDuration(longestDuration), completion: completion)
+    }
+    
+    
     // MARK: Highlighting Function
     
     func showSelectionIndicatorForFruit(fruit: Fruit) {

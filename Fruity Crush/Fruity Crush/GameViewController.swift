@@ -65,7 +65,10 @@ class GameViewController: UIViewController {
         scene.animateMatchedFruits(chains) {
             let columns = self.level.addFruits()
             self.scene.animateFallingFruits(columns) {
-            self.view.userInteractionEnabled = true
+                let columns = self.level.topUpFruits()
+                self.scene.animateNewFruits(columns) {
+                    self.view.userInteractionEnabled = true
+                }
             }
         }
     }
