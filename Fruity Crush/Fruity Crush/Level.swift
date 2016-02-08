@@ -14,6 +14,10 @@ let NumRows    = 9
 
 
 class Level {
+    // These level values are found in the JSON file
+    var targetScore = 0
+    var maximumMoves = 0
+    
     // Level has a private array property with 81 fruits
     private var fruits = Array2D<Fruit>(columns: NumColumns, rows: NumRows)
     // and a private array of slots defining whether a fruit can slip in
@@ -40,6 +44,9 @@ class Level {
                         if value == 1 { tiles[column, tileRow] = Tile() }
                     }
                 }
+                
+                targetScore  = dictionary["targetScore"] as! Int
+                maximumMoves = dictionary["moves"] as! Int
             }
         }
     }

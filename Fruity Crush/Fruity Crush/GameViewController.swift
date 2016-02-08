@@ -13,7 +13,16 @@ class GameViewController: UIViewController {
     
     var level: Level!
     var scene: GameScene!
+    
+    var movesRemaining = 0
+    var score = 0
+    
+    // Game UI Labels
+    @IBOutlet weak var movesLabel:  UILabel!
+    @IBOutlet weak var scoreLabel:  UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +53,9 @@ class GameViewController: UIViewController {
     // MARK: Game Lifecycle
     
     func beginGame() {
+        movesRemaining = level.maximumMoves
+        score = 0
+        updateLabels()
         shuffle()
     }
     
@@ -51,6 +63,20 @@ class GameViewController: UIViewController {
     func shuffle() {
         let newFruits = level.shuffle()
         scene.addSpritesForFruits(newFruits)
+    }
+    
+    
+    @IBAction func menu(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+    // MARK: UI Functions
+    
+    func updateLabels() {
+        targetLabel.text = "\(level.targetScore)"
+        movesLabel.text  = "\(movesRemaining)"
+        scoreLabel.text  = "\(score)"
     }
     
     
