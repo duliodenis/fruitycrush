@@ -290,7 +290,7 @@ class Level {
                         repeat {
                             chain.addFruit(fruits[column, row]!)
                             row += 1
-                        } while column < NumColumns && fruits[column, row]?.fruitType == matchType
+                        } while row < NumRows && fruits[column, row]?.fruitType == matchType
                         
                         set.insert(chain)
                     }
