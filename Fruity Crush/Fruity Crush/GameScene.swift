@@ -322,7 +322,7 @@ class GameScene: SKScene {
                 // create a new sprite for the fruit
                 let sprite = SKSpriteNode(imageNamed: fruit.fruitType.spriteName)
                 // and position it in the scene
-                sprite.position = pointForFruit(column: fruit.column, row: fruit.row)
+                sprite.position = pointForFruit(column: fruit.column, row: startRow)
                 // and add it to the fruit layer
                 fruitLayer.addChild(sprite)
                 fruit.sprite = sprite
