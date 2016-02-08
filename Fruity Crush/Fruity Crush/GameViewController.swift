@@ -61,16 +61,30 @@ class GameViewController: UIViewController {
         // interaction is locked during this action.
         let chains = level.removeMatches()
         
+        // base case of the recursion: if no more matches - player gets to move
+        if chains.count == 0 {
+            beginNextTurn()
+            return
+        }
+        
         // Animate any of the removed matches
         scene.animateMatchedFruits(chains) {
             let columns = self.level.addFruits()
             self.scene.animateFallingFruits(columns) {
                 let columns = self.level.topUpFruits()
                 self.scene.animateNewFruits(columns) {
-                    self.view.userInteractionEnabled = true
+                    // recursively repeat the cycle until there are no more matches
+                    self.handleMatches()
                 }
             }
         }
+    }
+    
+    
+    // yield control to the player
+    func beginNextTurn() {
+        level.detectPossibleSwaps()
+        view.userInteractionEnabled = true
     }
     
     
