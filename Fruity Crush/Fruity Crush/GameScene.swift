@@ -66,6 +66,9 @@ class GameScene: SKScene {
         // initialize the Swipe variables - nil denotes invalid values.
         swipeFromColumn = nil
         swipeFromRow = nil
+        
+        // preload the font for performance to preempt any load delays - suppress unused warning
+        _ = SKLabelNode(fontNamed: "BreveSC")
     }
 
     
@@ -256,6 +259,9 @@ class GameScene: SKScene {
     func animateMatchedFruits(chains: Set<Chain>, completion: () -> ()) {
         // loop through all the chains
         for chain in chains {
+            // animate the chain score
+            animateScoreForChain(chain)
+            
             // for every fruit in each chain
             for fruit in chain.fruits {
                 // trigger an animation
@@ -351,6 +357,27 @@ class GameScene: SKScene {
             }
         }
         runAction(SKAction.waitForDuration(longestDuration), completion: completion)
+    }
+    
+    
+    func animateScoreForChain(chain: Chain) {
+        // determine the chain midpoint
+        let firstSprite = chain.firstFruit().sprite!
+        let lastSprite = chain.lastFruit().sprite!
+        let centerPosition = CGPoint(x: (firstSprite.position.x + lastSprite.position.x)/2,
+                                     y: (firstSprite.position.y + lastSprite.position.y)/2 - 8)
+        
+        // add a label for the score to slowly float up
+        let scoreLabel = SKLabelNode(fontNamed: "BreveSC")
+        scoreLabel.fontSize = 24
+        scoreLabel.text = "\(chain.score)"
+        scoreLabel.position = centerPosition
+        scoreLabel.zPosition = 300
+        fruitLayer.addChild(scoreLabel)
+        
+        let moveAction = SKAction.moveBy(CGVector(dx: 0, dy: 3), duration: 0.7)
+        moveAction.timingMode = .EaseOut
+        scoreLabel.runAction(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
     }
     
     
