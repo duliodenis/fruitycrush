@@ -29,6 +29,7 @@
 		6CD1BB641C553B3900266C55 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD1BB631C553B3900266C55 /* Swap.swift */; };
 		6CD482E81C69103F00FBE306 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD482E71C69103F00FBE306 /* RoundedButton.swift */; };
 		6CD482EA1C69111300FBE306 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD482E91C69111300FBE306 /* MenuVC.swift */; };
+		6CD482EC1C69290800FBE306 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6CD482EB1C69290800FBE306 /* click.wav */; };
 		6CE03EFE1C51791400B9B6E1 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03EFD1C51791400B9B6E1 /* Tile.swift */; };
 		6CE03F001C517A5400B9B6E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE03EFF1C517A5400B9B6E1 /* Extensions.swift */; };
 		6CE03F141C5194C200B9B6E1 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CE03F131C5194C200B9B6E1 /* Level_1.json */; };
@@ -63,6 +64,7 @@
 		6CD1BB631C553B3900266C55 /* Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
 		6CD482E71C69103F00FBE306 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		6CD482E91C69111300FBE306 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		6CD482EB1C69290800FBE306 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click.wav; path = Audio/click.wav; sourceTree = "<group>"; };
 		6CE03EFD1C51791400B9B6E1 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		6CE03EFF1C517A5400B9B6E1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6CE03F131C5194C200B9B6E1 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_1.json; path = Levels/Level_1.json; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		6C9664D41C5EAAD800C60C70 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				6CD482EB1C69290800FBE306 /* click.wav */,
 				6C9664D51C5EAAED00C60C70 /* Chomp.wav */,
 				6C9664D61C5EAAED00C60C70 /* Drip.wav */,
 				6C9664D71C5EAAED00C60C70 /* Error.wav */,
@@ -252,6 +255,7 @@
 				6CB3179C1C4D9E7900EE4C0C /* Assets.xcassets in Resources */,
 				6CB3179A1C4D9E7900EE4C0C /* Main.storyboard in Resources */,
 				6C9664DB1C5EAAED00C60C70 /* Chomp.wav in Resources */,
+				6CD482EC1C69290800FBE306 /* click.wav in Resources */,
 				6C9664E01C5EAAED00C60C70 /* Theme.mp3 in Resources */,
 				6C9664DC1C5EAAED00C60C70 /* Drip.wav in Resources */,
 				6CE03F141C5194C200B9B6E1 /* Level_1.json in Resources */,

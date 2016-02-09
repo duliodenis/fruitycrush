@@ -201,6 +201,16 @@ class Level {
     }
     
     
+    // MARK: Private Score Function
+    
+    private func calculateScore(chains: Set<Chain>) {
+        // Match-3 = 60, Match-4 = 120, Match-5 = 180, ...
+        for chain in chains {
+            chain.score = 60 * (chain.length - 2)
+        }
+    }
+    
+    
     // MARK: Helper Method for Possible Swap Detection
     
     private func hasChain(column column: Int, row: Int) -> Bool {
@@ -251,6 +261,10 @@ class Level {
         // update the model by removing any chains
         removeFruits(horizontalChains)
         removeFruits(verticalChains)
+        
+        // update the model by calculating the score
+        calculateScore(horizontalChains)
+        calculateScore(verticalChains)
         
         return horizontalChains.union(verticalChains)
     }

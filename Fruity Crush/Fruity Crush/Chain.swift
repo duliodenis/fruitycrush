@@ -12,6 +12,9 @@ class Chain: Hashable, CustomStringConvertible {
     // the fruits that are part of this chain
     var fruits = [Fruit]()
     
+    // how many points this chain is worth
+    var score = 0
+    
     enum ChainType: CustomStringConvertible {
         case Horizontal
         case Vertical

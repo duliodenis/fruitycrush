@@ -15,4 +15,5 @@ struct Audio {
     static let match = SKAction.playSoundFileNamed("Ka-Ching.wav", waitForCompletion: false)
     static let fallingFruits = SKAction.playSoundFileNamed("Scrape.wav", waitForCompletion: false)
     static let addFruit = SKAction.playSoundFileNamed("Drip.wav", waitForCompletion: false)
+    static let click = SKAction.playSoundFileNamed("click.wav", waitForCompletion: false)
 }

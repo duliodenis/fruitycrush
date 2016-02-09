@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class GameViewController: UIViewController {
     
     var movesRemaining = 0
     var score = 0
+    
+    var click: AVAudioPlayer!
     
     // Game UI Labels
     @IBOutlet weak var movesLabel:  UILabel!
@@ -45,6 +48,9 @@ class GameViewController: UIViewController {
         // Present the scene.
         skView.presentScene(scene)
         
+        // Add any game sounds
+        addSound()
+        
         // kick the game off
         beginGame()
     }
@@ -67,6 +73,7 @@ class GameViewController: UIViewController {
     
     
     @IBAction func menu(sender: AnyObject) {
+        click.play()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -95,8 +102,19 @@ class GameViewController: UIViewController {
         
         // Animate any of the removed matches
         scene.animateMatchedFruits(chains) {
+            
+            // add the score of the chains to the total
+            for chain in chains {
+                self.score += chain.score
+            }
+            // and update the score label
+            self.updateLabels()
+            
+            // then shift down any fruits
             let columns = self.level.addFruits()
+            // animate the falling fruit
             self.scene.animateFallingFruits(columns) {
+                // and top up any gaps in the columns
                 let columns = self.level.topUpFruits()
                 self.scene.animateNewFruits(columns) {
                     // recursively repeat the cycle until there are no more matches
@@ -153,5 +171,16 @@ class GameViewController: UIViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    
+    func addSound() {
+        // AudioPlayer for Button Click
+        do {
+            try click = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!))
+            click.prepareToPlay()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
     }
 }
