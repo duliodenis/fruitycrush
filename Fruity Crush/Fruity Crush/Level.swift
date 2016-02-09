@@ -18,6 +18,11 @@ class Level {
     var targetScore = 0
     var maximumMoves = 0
     
+    // Combination Multiplier in order to reward making more than one chain
+    // Second Chain gets 2x the score, Third Chain gets 3x, etc.
+    // This variable is reset every move
+    private var comboMultiplier = 0
+    
     // Level has a private array property with 81 fruits
     private var fruits = Array2D<Fruit>(columns: NumColumns, rows: NumRows)
     // and a private array of slots defining whether a fruit can slip in
@@ -206,7 +211,8 @@ class Level {
     private func calculateScore(chains: Set<Chain>) {
         // Match-3 = 60, Match-4 = 120, Match-5 = 180, ...
         for chain in chains {
-            chain.score = 60 * (chain.length - 2)
+            chain.score = 60 * (chain.length - 2) * comboMultiplier
+            comboMultiplier += 1
         }
     }
     
@@ -417,5 +423,12 @@ class Level {
             }
         }
         return columns
+    }
+    
+    
+    // MARK: Combination Multiplier Function
+    
+    func resetComboMultiplier() {
+        comboMultiplier = 1
     }
 }
