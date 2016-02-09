@@ -130,6 +130,7 @@ class GameViewController: UIViewController {
     func beginNextTurn() {
         level.resetComboMultiplier()
         level.detectPossibleSwaps()
+        decrementMoves()
         view.userInteractionEnabled = true
     }
     
@@ -152,6 +153,14 @@ class GameViewController: UIViewController {
                 self.view.userInteractionEnabled = true
             }
         }
+    }
+    
+    
+    // MARK: Move function
+    
+    func decrementMoves() {
+        movesRemaining -= 1
+        updateLabels()
     }
     
     
