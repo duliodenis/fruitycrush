@@ -25,6 +25,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel:  UILabel!
     @IBOutlet weak var targetLabel: UILabel!
 
+    // Game Poster: Level Complete or Game Over
+    @IBOutlet weak var gameOverPoster: UIImageView!
+    
+    // tap gesture to dismiss game completion poster
+    var tapGestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +50,9 @@ class GameViewController: UIViewController {
         // Assign the handleSwipe() function to GameScene's swipeHandler property
         scene.swipeHandler = handleSwipe
         
+        // hide the game completion poster
+        gameOverPoster.hidden = true
+        
         // Present the scene.
         skView.presentScene(scene)
         
@@ -63,12 +71,14 @@ class GameViewController: UIViewController {
         score = 0
         updateLabels()
         level.resetComboMultiplier()
+        scene.animateBeginGame() {}
         shuffle()
     }
     
     
     func shuffle() {
         let newFruits = level.shuffle()
+        scene.removeAllFruitSprites()
         scene.addSpritesForFruits(newFruits)
     }
     
@@ -161,6 +171,38 @@ class GameViewController: UIViewController {
     func decrementMoves() {
         movesRemaining -= 1
         updateLabels()
+        
+        if score >= level.targetScore {
+            gameOverPoster.image = UIImage(named: "Level-Complete")
+            showGameOverPoster()
+        } else if movesRemaining == 0 {
+            gameOverPoster.image = UIImage(named: "Game-Over")
+            showGameOverPoster()
+        }
+    }
+    
+    
+    // MARK: Game Completion Poster Function
+    
+    func showGameOverPoster() {
+        gameOverPoster.hidden = false
+        scene.userInteractionEnabled = false
+        
+        scene.animateGameOver() {
+            self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideGameOverPoster")
+            self.view.addGestureRecognizer(self.tapGestureRecognizer)
+        }
+    }
+    
+    
+    func hideGameOverPoster() {
+        view.removeGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer = nil
+        
+        gameOverPoster.hidden = true
+        scene.userInteractionEnabled = true
+        
+        beginGame()
     }
     
     

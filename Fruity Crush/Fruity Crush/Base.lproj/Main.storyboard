@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="72" id="z8X-dU-PdW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-z2-eoh">
@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="21" id="ZLV-EE-e5J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-3t-Wne">
@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="24" id="9im-iJ-XZn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-94-uit">
@@ -68,7 +68,7 @@
                                     <constraint firstAttribute="width" constant="72" id="N0N-rM-E9P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSb-Bw-gji">
@@ -78,7 +78,7 @@
                                     <constraint firstAttribute="width" constant="72" id="sCP-u3-hgA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxy-h2-Lhq">
@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="width" constant="72" id="YYH-te-AO9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TI-wL-x7L" customClass="RoundedButton" customModule="Fruity_Crush" customModuleProvider="target">
@@ -106,6 +106,13 @@
                                     <action selector="menu:" destination="BV1-FR-VrT" eventType="touchUpInside" id="32h-9I-HbS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Level-Complete" translatesAutoresizingMaskIntoConstraints="NO" id="0cl-eA-nE8">
+                                <rect key="frame" x="140" y="225" width="320" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="qfn-2I-oqv"/>
+                                    <constraint firstAttribute="height" constant="150" id="zzA-KY-4RN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,9 +121,11 @@
                             <constraint firstItem="3TI-wL-x7L" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="20" id="Lm0-jo-1dY"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="12" id="Myx-du-0Al"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="NBU-uC-l9E"/>
+                            <constraint firstItem="0cl-eA-nE8" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="OeK-EK-oeI"/>
                             <constraint firstItem="cVC-z2-eoh" firstAttribute="top" secondItem="1Z8-ti-et3" secondAttribute="bottom" constant="8" id="R4M-P0-Ods"/>
                             <constraint firstItem="lxy-h2-Lhq" firstAttribute="top" secondItem="cSb-Bw-gji" secondAttribute="bottom" constant="5" id="UJW-xt-ydi"/>
                             <constraint firstItem="cVC-z2-eoh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="12" id="XsV-qp-XgP"/>
+                            <constraint firstItem="0cl-eA-nE8" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="Y3Z-lN-XqS"/>
                             <constraint firstItem="cSb-Bw-gji" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="17" id="YRM-yG-ghz"/>
                             <constraint firstItem="hYe-3t-Wne" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Ys4-z8-Mpb"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="topMargin" constant="17" id="ed0-Ax-6So"/>
@@ -134,6 +143,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="gameOverPoster" destination="0cl-eA-nE8" id="Lln-HQ-FUg"/>
                         <outlet property="movesLabel" destination="Jkq-94-uit" id="rLY-lM-cYh"/>
                         <outlet property="scoreLabel" destination="lxy-h2-Lhq" id="Rmc-Su-jsH"/>
                         <outlet property="targetLabel" destination="cVC-z2-eoh" id="xaJ-xw-DlY"/>
@@ -195,4 +205,7 @@
             <point key="canvasLocation" x="-164" y="455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Level-Complete" width="160" height="75"/>
+    </resources>
 </document>

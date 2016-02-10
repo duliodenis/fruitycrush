@@ -46,6 +46,9 @@ class GameScene: SKScene {
         // white background
         backgroundColor = SKColor.whiteColor()
         
+        // immediately hide the game layer to reveal it later
+        gameLayer.hidden = true
+        
         // add the empty gameLayer to the GameScene
         addChild(gameLayer)
         
@@ -378,6 +381,31 @@ class GameScene: SKScene {
         let moveAction = SKAction.moveBy(CGVector(dx: 0, dy: 3), duration: 0.7)
         moveAction.timingMode = .EaseOut
         scoreLabel.runAction(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
+    }
+    
+    
+    // animate the entire game layer out of the way
+    func animateGameOver(completion: () -> ()) {
+        let action = SKAction.moveBy(CGVector(dx: 0, dy: -size.height), duration: 0.3)
+        action.timingMode = .EaseIn
+        gameLayer.runAction(action, completion: completion)
+    }
+    
+    
+    // slide the entire game layer back in from the top of the screen
+    func animateBeginGame(completion: () -> ()) {
+        gameLayer.hidden = false
+        gameLayer.position = CGPoint(x: 0, y: size.height)
+        
+        let action = SKAction.moveBy(CGVector(dx: 0, dy: -size.height), duration: 0.3)
+        action.timingMode = .EaseOut
+        gameLayer.runAction(action, completion: completion)
+    }
+    
+    
+    // clear all the fruits for the next level
+    func removeAllFruitSprites() {
+        fruitLayer.removeAllChildren()
     }
     
     

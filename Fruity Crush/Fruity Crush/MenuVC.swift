@@ -33,7 +33,7 @@ class MenuVC: UIViewController {
     @IBAction func play(sender: AnyObject) {
         click.play()
         let gameVC = storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
-        presentViewController(gameVC, animated: true, completion: nil)
+        presentViewController(gameVC, animated: false, completion: nil)
     }
 
 }
