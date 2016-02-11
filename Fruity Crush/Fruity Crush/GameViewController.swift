@@ -24,6 +24,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var movesLabel:  UILabel!
     @IBOutlet weak var scoreLabel:  UILabel!
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var shuffleButton: RoundedButton!
 
     // Game Poster: Level Complete or Game Over
     @IBOutlet weak var gameOverPoster: UIImageView!
@@ -53,6 +54,9 @@ class GameViewController: UIViewController {
         // hide the game completion poster
         gameOverPoster.hidden = true
         
+        // and hide the shuffle button
+        shuffleButton.hidden = true
+        
         // Present the scene.
         skView.presentScene(scene)
         
@@ -71,7 +75,9 @@ class GameViewController: UIViewController {
         score = 0
         updateLabels()
         level.resetComboMultiplier()
-        scene.animateBeginGame() {}
+        scene.animateBeginGame() {
+            self.shuffleButton.hidden = false
+        }
         shuffle()
     }
     
@@ -83,11 +89,19 @@ class GameViewController: UIViewController {
     }
     
     
-    @IBAction func menu(sender: AnyObject) {
+    // MARK: Button Actions
+    
+    @IBAction func menuButtonTapped(sender: AnyObject) {
         click.play()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    
+    @IBAction func shuffleButtonTapped(sender: AnyObject) {
+        shuffle()
+        decrementMoves()
+    }
+    
     
     // MARK: UI Functions
     
@@ -187,6 +201,7 @@ class GameViewController: UIViewController {
     func showGameOverPoster() {
         gameOverPoster.hidden = false
         scene.userInteractionEnabled = false
+        shuffleButton.hidden = true
         
         scene.animateGameOver() {
             self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideGameOverPoster")

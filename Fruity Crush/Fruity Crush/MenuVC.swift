@@ -13,9 +13,20 @@ class MenuVC: UIViewController {
 
     var click: AVAudioPlayer!
     
+    // Lazy Instantiation of the Theme Music
+    lazy var themeMusic: AVAudioPlayer = {
+        let url = NSBundle.mainBundle().URLForResource("Theme", withExtension: "mp3")
+        let player = try? AVAudioPlayer(contentsOfURL: url!)
+        player!.numberOfLoops = -1
+        return player!
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSound()
+        
+        // and start playing the Theme Music
+        themeMusic.play()
     }
     
     

@@ -75,7 +75,7 @@ class GameScene: SKScene {
     }
 
     
-    // add Tiles to the 
+    // add Tiles to the Tile Layer
     func addTiles() {
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
@@ -98,6 +98,19 @@ class GameScene: SKScene {
             sprite.position = pointForFruit(column: fruit.column, row: fruit.row)
             fruitLayer.addChild(sprite)
             fruit.sprite = sprite
+            
+            // each fruit enlarges with a delay and fades in.
+            sprite.alpha = 0
+            sprite.xScale = 0.5
+            sprite.yScale = 0.5
+            
+            sprite.runAction(SKAction.sequence([
+                SKAction.waitForDuration(0.25, withRange: 0.5),
+                SKAction.group([
+                    SKAction.fadeInWithDuration(0.25),
+                    SKAction.scaleTo(1.0, duration: 0.25)
+                    ])
+                ]))
         }
     }
     
