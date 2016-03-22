@@ -46,6 +46,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>fruitfont.ttf</string>
+		<string>FruitStandFont.otf</string>
 	</array>
 </dict>
 </plist>

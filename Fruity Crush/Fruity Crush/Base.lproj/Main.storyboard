@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J8B-gT-UuU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J8B-gT-UuU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="fruitfont.ttf">
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
-            <string>BreveSC</string>
+        <mutableArray key="FruitStandFont.otf">
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
+            <string>Zantroke</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -33,73 +33,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-ti-et3">
-                                <rect key="frame" x="12" y="17" width="72" height="21"/>
+                                <rect key="frame" x="12" y="17" width="127" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ecJ-sb-1vP"/>
-                                    <constraint firstAttribute="width" constant="72" id="z8X-dU-PdW"/>
+                                    <constraint firstAttribute="height" constant="35" id="ecJ-sb-1vP"/>
+                                    <constraint firstAttribute="width" constant="127" id="z8X-dU-PdW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-z2-eoh">
-                                <rect key="frame" x="12" y="46" width="72" height="21"/>
+                                <rect key="frame" x="20" y="60" width="109" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="NEq-x6-TXR"/>
+                                    <constraint firstAttribute="width" constant="109" id="NEq-x6-TXR"/>
                                     <constraint firstAttribute="height" constant="21" id="ZLV-EE-e5J"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-3t-Wne">
-                                <rect key="frame" x="264" y="17" width="72" height="24"/>
+                                <rect key="frame" x="264" y="25" width="115" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="0zk-RQ-UbF"/>
+                                    <constraint firstAttribute="width" constant="115" id="0zk-RQ-UbF"/>
                                     <constraint firstAttribute="height" constant="24" id="9im-iJ-XZn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-94-uit">
-                                <rect key="frame" x="264" y="46" width="72" height="21"/>
+                                <rect key="frame" x="264" y="60" width="103" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6tD-7B-idH"/>
-                                    <constraint firstAttribute="width" constant="72" id="N0N-rM-E9P"/>
+                                    <constraint firstAttribute="width" constant="103" id="N0N-rM-E9P"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSb-Bw-gji">
-                                <rect key="frame" x="508" y="17" width="72" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="4aS-As-PVn"/>
-                                    <constraint firstAttribute="width" constant="72" id="sCP-u3-hgA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxy-h2-Lhq">
-                                <rect key="frame" x="508" y="46" width="72" height="21"/>
+                                <rect key="frame" x="462" y="60" width="118" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BjD-cr-rSU"/>
-                                    <constraint firstAttribute="width" constant="72" id="YYH-te-AO9"/>
+                                    <constraint firstAttribute="width" constant="118" id="YYH-te-AO9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TI-wL-x7L" customClass="RoundedButton" customModule="Fruity_Crush" customModuleProvider="target">
-                                <rect key="frame" x="20" y="539" width="91" height="36"/>
+                                <rect key="frame" x="20" y="539" width="119" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.33676666750000001" blue="0.65178148339999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="4Ho-7F-0YY"/>
-                                    <constraint firstAttribute="width" constant="91" id="VEI-t1-Q7N"/>
+                                    <constraint firstAttribute="width" constant="119" id="VEI-t1-Q7N"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -115,13 +105,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTF-Zq-qX8" customClass="RoundedButton" customModule="Fruity_Crush" customModuleProvider="target">
-                                <rect key="frame" x="489" y="539" width="91" height="36"/>
+                                <rect key="frame" x="442" y="539" width="138" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.33676666750000001" blue="0.65178148339999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="fkk-BA-2TI"/>
+                                    <constraint firstAttribute="width" constant="138" id="fkk-BA-2TI"/>
                                     <constraint firstAttribute="height" constant="36" id="hcD-3J-hy3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
                                 <state key="normal" title="Shuffle">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -129,29 +119,39 @@
                                     <action selector="shuffleButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Wiq-uz-FY2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSb-Bw-gji">
+                                <rect key="frame" x="462" y="25" width="118" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="4aS-As-PVn"/>
+                                    <constraint firstAttribute="width" constant="118" id="sCP-u3-hgA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hYe-3t-Wne" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="17" id="6be-kw-XXa"/>
+                            <constraint firstItem="hYe-3t-Wne" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="25" id="6be-kw-XXa"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="FyI-ZR-xVK"/>
                             <constraint firstItem="3TI-wL-x7L" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="20" id="Lm0-jo-1dY"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="12" id="Myx-du-0Al"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="NBU-uC-l9E"/>
                             <constraint firstItem="0cl-eA-nE8" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="OeK-EK-oeI"/>
                             <constraint firstItem="cVC-z2-eoh" firstAttribute="top" secondItem="1Z8-ti-et3" secondAttribute="bottom" constant="8" id="R4M-P0-Ods"/>
-                            <constraint firstItem="lxy-h2-Lhq" firstAttribute="top" secondItem="cSb-Bw-gji" secondAttribute="bottom" constant="5" id="UJW-xt-ydi"/>
-                            <constraint firstItem="cVC-z2-eoh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="12" id="XsV-qp-XgP"/>
+                            <constraint firstItem="lxy-h2-Lhq" firstAttribute="top" secondItem="cSb-Bw-gji" secondAttribute="bottom" constant="11" id="UJW-xt-ydi"/>
+                            <constraint firstItem="cVC-z2-eoh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="20" id="XsV-qp-XgP"/>
                             <constraint firstItem="0cl-eA-nE8" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="Y3Z-lN-XqS"/>
-                            <constraint firstItem="cSb-Bw-gji" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="17" id="YRM-yG-ghz"/>
-                            <constraint firstItem="hYe-3t-Wne" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Ys4-z8-Mpb"/>
+                            <constraint firstItem="cSb-Bw-gji" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="25" id="YRM-yG-ghz"/>
+                            <constraint firstItem="hYe-3t-Wne" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" constant="21.5" id="Ys4-z8-Mpb"/>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="XTF-Zq-qX8" secondAttribute="bottom" constant="25" id="Ywz-LN-sMm"/>
                             <constraint firstItem="1Z8-ti-et3" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="topMargin" constant="17" id="ed0-Ax-6So"/>
-                            <constraint firstItem="Jkq-94-uit" firstAttribute="top" secondItem="hYe-3t-Wne" secondAttribute="bottom" constant="5" id="ko0-ql-mJS"/>
+                            <constraint firstItem="Jkq-94-uit" firstAttribute="top" secondItem="hYe-3t-Wne" secondAttribute="bottom" constant="11" id="ko0-ql-mJS"/>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="3TI-wL-x7L" secondAttribute="bottom" constant="25" id="l8l-v1-0vR"/>
                             <constraint firstAttribute="trailing" secondItem="lxy-h2-Lhq" secondAttribute="trailing" constant="20" id="lWZ-xH-NPo"/>
                             <constraint firstAttribute="trailing" secondItem="cSb-Bw-gji" secondAttribute="trailing" constant="20" id="lvD-fg-gtf"/>
                             <constraint firstAttribute="trailing" secondItem="XTF-Zq-qX8" secondAttribute="trailing" constant="20" id="upC-Zh-d2B"/>
-                            <constraint firstItem="Jkq-94-uit" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="xhD-wa-1G9"/>
+                            <constraint firstItem="Jkq-94-uit" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" constant="15.5" id="xhD-wa-1G9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -184,16 +184,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruity Crush Saga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Don-vp-uvy">
-                                <rect key="frame" x="149" y="70" width="302" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9d2-SP-o4J"/>
-                                    <constraint firstAttribute="width" constant="302" id="RgA-xD-hWq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="35"/>
-                                <color key="textColor" red="1" green="0.33676666750000001" blue="0.65178148339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-mX-Lrb" customClass="RoundedButton" customModule="Fruity_Crush" customModuleProvider="target">
                                 <rect key="frame" x="202" y="253" width="197" height="51"/>
                                 <color key="backgroundColor" red="1" green="0.33676666746891337" blue="0.65178148341221087" alpha="1" colorSpace="calibratedRGB"/>
@@ -201,19 +191,29 @@
                                     <constraint firstAttribute="width" constant="197" id="KV0-e8-Wy3"/>
                                     <constraint firstAttribute="height" constant="51" id="kmM-wN-R3T"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BreveSC" family="Breve SC" pointSize="24"/>
-                                <state key="normal" title="Play">
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="24"/>
+                                <state key="normal" title="PLAY">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="play:" destination="J8B-gT-UuU" eventType="touchUpInside" id="6Ad-EA-931"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruity Crush Saga" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Don-vp-uvy">
+                                <rect key="frame" x="70" y="73" width="461" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9d2-SP-o4J"/>
+                                    <constraint firstAttribute="width" constant="461" id="RgA-xD-hWq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.33676666750000001" blue="0.65178148339999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Don-vp-uvy" firstAttribute="top" secondItem="UY5-vG-5mF" secondAttribute="bottom" constant="50" id="NrD-b0-9PZ"/>
-                            <constraint firstItem="dFf-mX-Lrb" firstAttribute="top" secondItem="Don-vp-uvy" secondAttribute="bottom" constant="133" id="PBP-a7-roA"/>
+                            <constraint firstItem="Don-vp-uvy" firstAttribute="top" secondItem="UY5-vG-5mF" secondAttribute="bottom" constant="53" id="NrD-b0-9PZ"/>
+                            <constraint firstItem="dFf-mX-Lrb" firstAttribute="top" secondItem="Don-vp-uvy" secondAttribute="bottom" constant="130" id="PBP-a7-roA"/>
                             <constraint firstItem="dFf-mX-Lrb" firstAttribute="centerX" secondItem="Dv9-yx-PEF" secondAttribute="centerX" id="eKX-j1-1zK"/>
                             <constraint firstItem="Don-vp-uvy" firstAttribute="centerX" secondItem="Dv9-yx-PEF" secondAttribute="centerX" id="gqu-Ez-ilm"/>
                         </constraints>

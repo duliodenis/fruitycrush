@@ -19,6 +19,7 @@
 		6C9664DE1C5EAAED00C60C70 /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6C9664D81C5EAAED00C60C70 /* Ka-Ching.wav */; };
 		6C9664DF1C5EAAED00C60C70 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6C9664D91C5EAAED00C60C70 /* Scrape.wav */; };
 		6C9664E01C5EAAED00C60C70 /* Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C9664DA1C5EAAED00C60C70 /* Theme.mp3 */; };
+		6C98A06C1CA0C37800E1674B /* FruitStandFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C98A06B1CA0C37800E1674B /* FruitStandFont.otf */; };
 		6CB317911C4D9E7900EE4C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */; };
 		6CB317951C4D9E7900EE4C0C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB317941C4D9E7900EE4C0C /* GameScene.swift */; };
 		6CB317971C4D9E7900EE4C0C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB317961C4D9E7900EE4C0C /* GameViewController.swift */; };
@@ -52,6 +53,7 @@
 		6C9664D81C5EAAED00C60C70 /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Ka-Ching.wav"; path = "Audio/Ka-Ching.wav"; sourceTree = "<group>"; };
 		6C9664D91C5EAAED00C60C70 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Scrape.wav; path = Audio/Scrape.wav; sourceTree = "<group>"; };
 		6C9664DA1C5EAAED00C60C70 /* Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Theme.mp3; path = Audio/Theme.mp3; sourceTree = "<group>"; };
+		6C98A06B1CA0C37800E1674B /* FruitStandFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FruitStandFont.otf; sourceTree = "<group>"; };
 		6CB3178D1C4D9E7900EE4C0C /* Fruity Crush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fruity Crush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CB317941C4D9E7900EE4C0C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		6C18FF131C50003700961179 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C98A06A1CA0C30200E1674B /* Fonts */,
 				6C9664D41C5EAAD800C60C70 /* Audio */,
 				6CE03F1D1C51950300B9B6E1 /* Levels */,
 				6CB3179B1C4D9E7900EE4C0C /* Assets.xcassets */,
@@ -145,6 +148,15 @@
 			name = Audio;
 			sourceTree = "<group>";
 		};
+		6C98A06A1CA0C30200E1674B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6C98A06B1CA0C37800E1674B /* FruitStandFont.otf */,
+				6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		6CB317841C4D9E7900EE4C0C = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +182,6 @@
 				6C18FF131C50003700961179 /* Resources */,
 				6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */,
 				6CB317A01C4D9E7900EE4C0C /* Info.plist */,
-				6CB317A61C4DA00500EE4C0C /* fruitfont.ttf */,
 			);
 			path = "Fruity Crush";
 			sourceTree = "<group>";
@@ -255,6 +266,7 @@
 				6CB3179C1C4D9E7900EE4C0C /* Assets.xcassets in Resources */,
 				6CB3179A1C4D9E7900EE4C0C /* Main.storyboard in Resources */,
 				6C9664DB1C5EAAED00C60C70 /* Chomp.wav in Resources */,
+				6C98A06C1CA0C37800E1674B /* FruitStandFont.otf in Resources */,
 				6CD482EC1C69290800FBE306 /* click.wav in Resources */,
 				6C9664E01C5EAAED00C60C70 /* Theme.mp3 in Resources */,
 				6C9664DC1C5EAAED00C60C70 /* Drip.wav in Resources */,
