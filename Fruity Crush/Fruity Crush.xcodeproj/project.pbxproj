@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24548355470749DF6B2C3588 /* Pods_Fruity_Crush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F7CC2109174CA0D491E1E2 /* Pods_Fruity_Crush.framework */; };
 		6C18FF0D1C4FEA2F00961179 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6C18FF0C1C4FEA2F00961179 /* Sprites.atlas */; };
 		6C18FF0F1C4FEB2B00961179 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18FF0E1C4FEB2B00961179 /* Fruit.swift */; };
 		6C18FF111C4FFB7C00961179 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18FF101C4FFB7C00961179 /* Array2D.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1538E582682378ADC5226D1B /* Pods-Fruity Crush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruity Crush.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fruity Crush/Pods-Fruity Crush.release.xcconfig"; sourceTree = "<group>"; };
 		6C18FF0C1C4FEA2F00961179 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		6C18FF0E1C4FEB2B00961179 /* Fruit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		6C18FF101C4FFB7C00961179 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
@@ -74,6 +76,8 @@
 		6CE03F171C5194E900B9B6E1 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_2.json; path = Levels/Level_2.json; sourceTree = "<group>"; };
 		6CE03F181C5194E900B9B6E1 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_3.json; path = Levels/Level_3.json; sourceTree = "<group>"; };
 		6CE03F191C5194E900B9B6E1 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_4.json; path = Levels/Level_4.json; sourceTree = "<group>"; };
+		80F7CC2109174CA0D491E1E2 /* Pods_Fruity_Crush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fruity_Crush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90CFFE055AE95D32C43A923 /* Pods-Fruity Crush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruity Crush.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fruity Crush/Pods-Fruity Crush.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +85,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24548355470749DF6B2C3588 /* Pods_Fruity_Crush.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FA8588659077136890F8E24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80F7CC2109174CA0D491E1E2 /* Pods_Fruity_Crush.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4060F20274570560C2F5492A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E90CFFE055AE95D32C43A923 /* Pods-Fruity Crush.debug.xcconfig */,
+				1538E582682378ADC5226D1B /* Pods-Fruity Crush.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6C18FF121C50002500961179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,11 +179,22 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		6C98A06D1CA0C8D200E1674B /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */,
+				6CB317A01C4D9E7900EE4C0C /* Info.plist */,
+			);
+			name = Infrastructure;
+			sourceTree = "<group>";
+		};
 		6CB317841C4D9E7900EE4C0C = {
 			isa = PBXGroup;
 			children = (
 				6CB3178F1C4D9E7900EE4C0C /* Fruity Crush */,
 				6CB3178E1C4D9E7900EE4C0C /* Products */,
+				4060F20274570560C2F5492A /* Pods */,
+				2FA8588659077136890F8E24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,12 +209,11 @@
 		6CB3178F1C4D9E7900EE4C0C /* Fruity Crush */ = {
 			isa = PBXGroup;
 			children = (
+				6C98A06D1CA0C8D200E1674B /* Infrastructure */,
 				6C18FF171C5044B800961179 /* ViewControllers */,
 				6C18FF161C5036A700961179 /* Views */,
 				6C18FF121C50002500961179 /* Model */,
 				6C18FF131C50003700961179 /* Resources */,
-				6CB317901C4D9E7900EE4C0C /* AppDelegate.swift */,
-				6CB317A01C4D9E7900EE4C0C /* Info.plist */,
 			);
 			path = "Fruity Crush";
 			sourceTree = "<group>";
@@ -205,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CB317A31C4D9E7900EE4C0C /* Build configuration list for PBXNativeTarget "Fruity Crush" */;
 			buildPhases = (
+				8B811ACC2AB6FFB86E504C77 /* Check Pods Manifest.lock */,
 				6CB317891C4D9E7900EE4C0C /* Sources */,
 				6CB3178A1C4D9E7900EE4C0C /* Frameworks */,
 				6CB3178B1C4D9E7900EE4C0C /* Resources */,
+				D3E793F2AAFB12A5A37E7643 /* Embed Pods Frameworks */,
+				91C17E25C4F8FEB2BB47AC14 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,6 +313,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B811ACC2AB6FFB86E504C77 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91C17E25C4F8FEB2BB47AC14 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fruity Crush/Pods-Fruity Crush-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E793F2AAFB12A5A37E7643 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fruity Crush/Pods-Fruity Crush-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CB317891C4D9E7900EE4C0C /* Sources */ = {
@@ -407,10 +490,12 @@
 		};
 		6CB317A41C4D9E7900EE4C0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E90CFFE055AE95D32C43A923 /* Pods-Fruity Crush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Fruity Crush/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.ddapps.Fruity-Crush";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +503,7 @@
 		};
 		6CB317A51C4D9E7900EE4C0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1538E582682378ADC5226D1B /* Pods-Fruity Crush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Fruity Crush/Info.plist";

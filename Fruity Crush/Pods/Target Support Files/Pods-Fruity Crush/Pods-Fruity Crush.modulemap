@@ -1,0 +1,6 @@
+framework module Pods_Fruity_Crush {
+  umbrella header "Pods-Fruity Crush-umbrella.h"
+
+  export *
+  module * { export * }
+}
