@@ -11,6 +11,11 @@ import AVFoundation
 
 class MenuVC: UIViewController {
 
+    // IBOutlet to button's center X constraint for animation
+    @IBOutlet weak var playConstraint: NSLayoutConstraint!
+    
+    var animationEngine: AnimationEngine!
+    
     var click: AVAudioPlayer!
     
     // Lazy Instantiation of the Theme Music
@@ -25,10 +30,19 @@ class MenuVC: UIViewController {
         super.viewDidLoad()
         addSound()
         
+        // build animation engine with the Play button constraint
+        animationEngine = AnimationEngine(constraints: [playConstraint])
+        
         // and start playing the Theme Music
         themeMusic.play()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Animate the Play Button onto the Screen
+        animationEngine.animateOnScreen(1)
+    }
     
     func addSound() {
         // AudioPlayer for Button Click
