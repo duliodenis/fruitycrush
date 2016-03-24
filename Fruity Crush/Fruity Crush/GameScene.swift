@@ -43,8 +43,11 @@ class GameScene: SKScene {
         // Center in the screen
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        // white background
-        backgroundColor = SKColor.whiteColor()
+        // add game background
+        let background = SKSpriteNode(imageNamed: "gameBackground")
+        background.size = frame.size
+        background.scene?.scaleMode = .AspectFill
+        addChild(background)
         
         // immediately hide the game layer to reveal it later
         gameLayer.hidden = true

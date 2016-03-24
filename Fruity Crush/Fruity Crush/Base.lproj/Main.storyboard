@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="width" constant="127" id="z8X-dU-PdW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-z2-eoh">
@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="21" id="ZLV-EE-e5J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-3t-Wne">
@@ -59,7 +59,7 @@
                                     <constraint firstAttribute="height" constant="24" id="9im-iJ-XZn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-94-uit">
@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="width" constant="103" id="N0N-rM-E9P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TI-wL-x7L" customClass="PulsatingButton" customModule="Fruity_Crush" customModuleProvider="target">
@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="95" id="sCP-u3-hgA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxy-h2-Lhq">
@@ -126,7 +126,7 @@
                                     <constraint firstAttribute="width" constant="95" id="YYH-te-AO9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -184,6 +184,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruit-stand-background" translatesAutoresizingMaskIntoConstraints="NO" id="9d9-l7-Y72">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-mX-Lrb" customClass="PulsatingButton" customModule="Fruity_Crush" customModuleProvider="target">
                                 <rect key="frame" x="202" y="253" width="197" height="51"/>
                                 <color key="backgroundColor" red="1" green="0.33676666746891337" blue="0.65178148341221087" alpha="1" colorSpace="calibratedRGB"/>
@@ -206,16 +209,20 @@
                                     <constraint firstAttribute="width" constant="461" id="RgA-xD-hWq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Zantroke" family="Zantroke" pointSize="25"/>
-                                <color key="textColor" red="1" green="0.33676666750000001" blue="0.65178148339999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9d9-l7-Y72" secondAttribute="trailing" id="9Vi-Kp-oNB"/>
+                            <constraint firstItem="9d9-l7-Y72" firstAttribute="leading" secondItem="Dv9-yx-PEF" secondAttribute="leading" id="Lnb-h2-35g"/>
                             <constraint firstItem="Don-vp-uvy" firstAttribute="top" secondItem="UY5-vG-5mF" secondAttribute="bottom" constant="53" id="NrD-b0-9PZ"/>
                             <constraint firstItem="dFf-mX-Lrb" firstAttribute="top" secondItem="Don-vp-uvy" secondAttribute="bottom" constant="130" id="PBP-a7-roA"/>
                             <constraint firstItem="dFf-mX-Lrb" firstAttribute="centerX" secondItem="Dv9-yx-PEF" secondAttribute="centerX" id="eKX-j1-1zK"/>
+                            <constraint firstItem="9d9-l7-Y72" firstAttribute="top" secondItem="Dv9-yx-PEF" secondAttribute="top" id="ghz-0r-TO6"/>
                             <constraint firstItem="Don-vp-uvy" firstAttribute="centerX" secondItem="Dv9-yx-PEF" secondAttribute="centerX" id="gqu-Ez-ilm"/>
+                            <constraint firstItem="yox-iu-IR9" firstAttribute="top" secondItem="9d9-l7-Y72" secondAttribute="bottom" id="zyi-yr-VEF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -229,5 +236,6 @@
     </scenes>
     <resources>
         <image name="Level-Complete" width="160" height="75"/>
+        <image name="fruit-stand-background" width="1080" height="1916"/>
     </resources>
 </document>
