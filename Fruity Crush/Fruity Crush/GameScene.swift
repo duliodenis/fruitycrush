@@ -74,7 +74,9 @@ class GameScene: SKScene {
         swipeFromRow = nil
         
         // preload the font for performance to preempt any load delays - suppress unused warning
-        _ = SKLabelNode(fontNamed: "BreveSC")
+        //_ = SKLabelNode(fontNamed: "BreveSC")
+        _ = SKLabelNode(fontNamed: "Zantroke")
+        
     }
 
     
@@ -387,7 +389,8 @@ class GameScene: SKScene {
                                      y: (firstSprite.position.y + lastSprite.position.y)/2 - 8)
         
         // add a label for the score to slowly float up
-        let scoreLabel = SKLabelNode(fontNamed: "BreveSC")
+        // let scoreLabel = SKLabelNode(fontNamed: "BreveSC")
+        let scoreLabel = SKLabelNode(fontNamed: "Zantroke")
         scoreLabel.fontSize = 24
         scoreLabel.text = "\(chain.score)"
         scoreLabel.position = centerPosition
