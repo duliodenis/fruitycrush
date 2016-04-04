@@ -48,5 +48,7 @@
 		<string>fruitfont.ttf</string>
 		<string>FruitStandFont.otf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
