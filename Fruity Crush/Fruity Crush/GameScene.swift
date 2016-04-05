@@ -43,11 +43,8 @@ class GameScene: SKScene {
         // Center in the screen
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        // add game background
-        let background = SKSpriteNode(imageNamed: "gameBackground")
-        background.size = frame.size
-        background.scene?.scaleMode = .AspectFill
-        addChild(background)
+        // Belize Hole Background (http://flatuicolors.com/)
+        backgroundColor = SKColor(red: 41.0/255.0, green: 128.0/255.0, blue: 185.0/255.0, alpha: 1)
         
         // immediately hide the game layer to reveal it later
         gameLayer.hidden = true
